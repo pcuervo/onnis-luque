@@ -31,8 +31,7 @@
 		<meta name="msapplication-square150x150logo" content="<?php echo THEMEPATH; ?>favicon/mstile-150x150.png" />
 		<meta name="msapplication-wide310x150logo" content="<?php echo THEMEPATH; ?>favicon/mstile-310x150.png" />
 		<meta name="msapplication-square310x310logo" content="<?php echo THEMEPATH; ?>favicon/mstile-310x310.png" />
-		<!-- CSS -->
-		<link rel="stylesheet" href="css/style.min.css">
+		
 		<!-- Google font(s) -->
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
 		<!-- Font awesome -->
@@ -55,19 +54,30 @@
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 		<div class="[ container ]">
-			<header class="[ xmall-12 ][ padding--top-bottom--small ][ bg-primary ]">
+			<!-- =================================================
+			==== MOBILE MENU
+			================================================== -->
+			<header class="[ xmall-12 ][ padding-top-bottom--small ][ bg-light ][ drop-shadow ][ hidden--xlarge ]">
 				<div class="[ wrapper ]">
-					<div class="[ row ]">
-						<div class="[ column xmall-6 ][ inline-block align-middle ][ menu__item ]">
-							<div class="[ bg-logo-wrapper ]">
-								<a class="[ bg-logo ]" href="#"></a>
-							</div>
+					<div class="[ text-center color-light ]">
+						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ no-margin ][ hidden--xlarge-inline ]">
+							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
 						</div>
-						<div class="[ column xmall-6 ][ inline-block align-middle ][ text-center ]">
-							<a class="[ block ][ button--hollow ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
-								<img class="[ svg icon icon--small ][ color-light ]" src="icons/hamburger.svg" alt="menu">
-							</a>
-						</div>
+					</div>
+				</div>
+			</header>
+			<!-- =================================================
+			==== DESKTOP MENU
+			================================================== -->
+			<header class="[ xmall-12 ][ shown--large ][ padding-top-bottom--small ]">
+				<div class="[ wrapper ]">
+					<div class="[ xmall-12 ][ inline-block align-middle ][ text-center ]">
+						<nav class="[ text-center ]">
+							<a href="<?php echo site_url(); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo is_home() ? 'active' : ''; ?> ]">Inicio</a>
+							<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Archivo</a>
+							<a href="<?php echo site_url('talleres'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ]">Talleres</a>
+							<a href="<?php echo site_url('editorial'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ]">Editorial</a>
+						</nav><!-- categorias -->
 					</div>
 				</div>
 			</header>

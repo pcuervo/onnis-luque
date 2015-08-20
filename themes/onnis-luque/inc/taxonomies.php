@@ -7,19 +7,19 @@
 add_action( 'init', 'custom_taxonomies_callback', 0 );
 function custom_taxonomies_callback(){
 
-	// BRANDS
-	if( ! taxonomy_exists('marcas')){
+	// AÑO
+	if( ! taxonomy_exists('ano')){
 
 		$labels = array(
-			'name'              => 'Marca',
-			'singular_name'     => 'Marca',
+			'name'              => 'Año',
+			'singular_name'     => 'Año',
 			'search_items'      => 'Buscar',
 			'all_items'         => 'Todos',
-			'edit_item'         => 'Editar marca',
-			'update_item'       => 'Actualizar marca',
-			'add_new_item'      => 'Nueva marca',
-			'new_item_name'     => 'Nombre nuevo marca',
-			'menu_name'         => 'Marcas'
+			'edit_item'         => 'Editar año',
+			'update_item'       => 'Actualizar año',
+			'add_new_item'      => 'Nuevo año',
+			'new_item_name'     => 'Nombre nuevo año',
+			'menu_name'         => 'Año'
 		);
 		$args = array(
 			'hierarchical'      => true,
@@ -28,56 +28,91 @@ function custom_taxonomies_callback(){
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
 			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'marca' ),
+			'rewrite'           => array( 'slug' => 'ano' ),
 		);
 
-		register_taxonomy( 'marcas', 'productos', $args );
+		register_taxonomy( 'ano', 'archivo', $args );
 	}
 
-	// Insert taxonomy terms
-	// insert_taxonomy_terms();
+	// LUGAR
+	if( ! taxonomy_exists('lugar')){
+
+		$labels = array(
+			'name'              => 'Lugar',
+			'singular_name'     => 'Lugar',
+			'search_items'      => 'Buscar',
+			'all_items'         => 'Todos',
+			'edit_item'         => 'Editar lugar',
+			'update_item'       => 'Actualizar lugar',
+			'add_new_item'      => 'Nuevo lugar',
+			'new_item_name'     => 'Nombre nuevo lugar',
+			'menu_name'         => 'Lugar'
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'lugar' ),
+		);
+
+		register_taxonomy( 'lugar', 'archivo', $args );
+	}
+
+	// ARQUITECTO / DESPACHO
+	if( ! taxonomy_exists('arquitecto-despacho')){
+
+		$labels = array(
+			'name'              => 'Arquitecto / Despacho',
+			'singular_name'     => 'Arquitecto / Despacho',
+			'search_items'      => 'Buscar',
+			'all_items'         => 'Todos',
+			'edit_item'         => 'Editar Arquitecto / Despacho',
+			'update_item'       => 'Actualizar Arquitecto / Despacho',
+			'add_new_item'      => 'Nuevo Arquitecto / Despacho',
+			'new_item_name'     => 'Nombre nuevo Arquitecto / Despacho',
+			'menu_name'         => 'Arquitecto / Despacho'
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'arquitecto-despacho' ),
+		);
+
+		register_taxonomy( 'arquitecto-despacho', 'archivo', $args );
+	}
+
+	// TIPOLOGÍA
+	if( ! taxonomy_exists('tipologia')){
+
+		$labels = array(
+			'name'              => 'Tipología',
+			'singular_name'     => 'Tipología',
+			'search_items'      => 'Buscar',
+			'all_items'         => 'Todos',
+			'edit_item'         => 'Editar Tipología',
+			'update_item'       => 'Actualizar Tipología',
+			'add_new_item'      => 'Nuevo Tipología',
+			'new_item_name'     => 'Nombre nuevo Tipología',
+			'menu_name'         => 'Tipología'
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'tipologia' ),
+		);
+
+		register_taxonomy( 'tipologia', 'archivo', $args );
+	}
 
 }// custom_taxonomies_callback
-
-// /*
-//  * Insert dynamic taxonomy terms after a post has been created/saved.
-//  */
-// function update_taxonomies(){
-// 	global $post;
-
-// 	// Exist of post doesn't exist or it has been moved to trash
-// 	if( NULL === $post || 'trash' === get_post_status( $post->ID ) ) {
-// 		return;
-// 	}
-
-// 	switch ( $post->post_type ) {
-// 		case 'marcas':
-// 			insert_dynamic_taxonomy_term( $post->post_title, 'marcas' );
-// 			break;
-// 		case 'productos':
-// 			insert_dynamic_taxonomy_term( $post->post_title, 'productos-receta' );
-// 			break;
-// 		default:
-// 			# code...
-// 			break;
-// 	}
-	
-// }// update_taxonomies
-// add_action('save_post', 'update_taxonomies');
-
-// /*
-//  * Insert  $new_term to $taxonomy based on the title of new post
-//  *
-//  * @param string $new_term
-//  * @param string $taxonomy
-//  */
-// function insert_dynamic_taxonomy_term( $new_term, $taxonomy ){
-
-// 	$term = term_exists( $new_term, $taxonomy );
-// 	if ( FALSE !== $term && NULL !== $term ) {
-// 		return;
-// 	}
-// 	wp_insert_term( $new_term, $taxonomy );
-
-// }// insert_dynamic_taxonomy_term
-

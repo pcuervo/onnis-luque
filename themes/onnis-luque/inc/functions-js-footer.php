@@ -23,6 +23,29 @@ function footer_scripts(){
 			 * Triggered events
 			**/
 
+			/*------------------------------------*\
+				#HOME
+			\*------------------------------------*/
+			<?php if( is_home() ) : ?>
+
+				/**
+				 * On load
+				**/
+
+				/**
+				 * Triggered events
+				**/
+
+				$('.js-contact-form').on('submit', function(e){
+					e.preventDefault();
+
+					sendContactEmail( $(this) );
+				});
+			
+			<?php endif; ?>
+
+			
+
 <?php  ?>
 		</script>
 <?php

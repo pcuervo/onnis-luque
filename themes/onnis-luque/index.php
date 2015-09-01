@@ -4,19 +4,15 @@
 ==== HERO
 ================================================== -->
 <section class="[ hero hero-home ]">
-	<div class="[ padding-top-bottom--large ][ relative z-index-2 ]">
-		<div class="[ text-center ]">
-			<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ margin-bottom--large ][ hidden--xlarge-inline ]">
-				<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="#"></a>
-			</div>
-			<a href="<?php echo site_url( 'proyectos' ); ?>" class="[ button button--primary button--hollow ]">Ver proyectos</a>
-			<a href="<?php echo site_url( 'contacto' ); ?>" class="[ button button--primary button--hollow ]">Contáctame</a>
-		</div>
+	<div class="[ screen screen-intermediate--80 ][ z-index-1 ]"></div>
+	<div class="[ text-center ][ xmall-12 ][ center--bottom ][ z-index-2 ]">
+		<a href="<?php echo site_url( 'proyectos' ); ?>" class="[ button button--primary button--hollow ]">Ver proyectos</a>
+		<a href="<?php echo site_url( 'contacto' ); ?>" class="[ button button--primary button--hollow ]">Contáctame</a>
 	</div>
 </section><!-- hero -->
 
 <!-- =================================================
-==== TESTIMONIALS
+==== ARCHIVO
 ================================================== -->
 <?php
 $archivo_args = array(

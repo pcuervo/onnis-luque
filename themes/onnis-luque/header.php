@@ -31,7 +31,7 @@
 		<meta name="msapplication-square150x150logo" content="<?php echo THEMEPATH; ?>favicon/mstile-150x150.png" />
 		<meta name="msapplication-wide310x150logo" content="<?php echo THEMEPATH; ?>favicon/mstile-310x150.png" />
 		<meta name="msapplication-square310x310logo" content="<?php echo THEMEPATH; ?>favicon/mstile-310x310.png" />
-		
+
 		<!-- Google font(s) -->
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
 		<!-- Font awesome -->
@@ -57,15 +57,14 @@
 			<!-- =================================================
 			==== MOBILE MENU
 			================================================== -->
-			<header class="[ xmall-12 ][ padding-top-bottom--small ][ bg-light ][ drop-shadow ][ hidden--xlarge ]">
+			<header class="[ xmall-12 ][ padding-top-bottom--small ][ hidden--xlarge ]">
 				<div class="[ wrapper ]">
 					<div class="[ text-center color-light ]">
-						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ no-margin ][ hidden--xlarge-inline ]">
-							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
-						</div>
+						<img class="[ svg icon icon--onnis-square ][ center block ]" src="<?php echo THEMEPATH; ?>icons/onnis-square.svg">
 					</div>
 				</div>
 			</header>
+
 			<!-- =================================================
 			==== DESKTOP MENU
 			================================================== -->

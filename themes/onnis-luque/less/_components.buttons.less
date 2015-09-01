@@ -49,8 +49,8 @@
 }
 
 .button--primary{
-	border-color: @primary;
-	color: @light;
+	border-color: fade(@dark, 50%);
+	color: @intermediate;
 	background: @primary;
 
 	&:hover{
@@ -59,12 +59,12 @@
 }
 
 .button--secondary{
-	border-color: @secondary;
+	border-color: @intermediate;
 	color: @light;
-	background: @secondary;
+	background: @intermediate;
 
 	&:hover{
-		background-color: darken(@secondary, 10%);
+		background-color: darken(@intermediate, 10%);
 	}
 }
 
@@ -100,12 +100,12 @@
 
 .button--ink{
 	border-color: transparent;
-	color: @secondary;
+	color: @intermediate;
 	background: transparent;
 
 	&:hover{
 		background-color: transparent;
-		color: darken(@secondary, 10%);
+		color: darken(@intermediate, 10%);
 	}
 }
 
@@ -205,11 +205,11 @@
 }
 
 .button--hollow.button--secondary{
-	border-color: @secondary;
-	color: @secondary;
+	border-color: @intermediate;
+	color: @intermediate;
 
 	&:hover{
-		background-color: @secondary;
+		background-color: @intermediate;
 	}
 }
 

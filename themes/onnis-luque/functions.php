@@ -72,15 +72,10 @@ function show_all_projects(){
 	while ( have_posts() ) : the_post();
 		$lugar = get_lugar_proyecto( $post->ID );
 		$ano = get_ano_proyecto( $post->ID );
+		$permalink = get_permalink( $post->ID );
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-	?>
-		<div class="[ column xmall-12 medium-4 ][ hero ]" style="background-image: url('<?php echo $image[0]; ?>');">
-			<div class="[ color-light ][ padding ]">
-				<h3><?php echo get_the_title(); ?></h3>
-				<p><?php echo $lugar . '. ' . $ano; ?></p>
-			</div>
-		</div>
-	<?php endwhile; wp_reset_query();
+		get_html_project( $permalink, $image[0], get_the_title(), $lugar, $ano );
+	endwhile; wp_reset_query();
 
 }// show_all_projects
 
@@ -110,74 +105,12 @@ function show_filtered_projects( $filters ){
 	while ( $query->have_posts() ) : $query->the_post();
 		$lugar = get_lugar_proyecto( $post->ID );
 		$ano = get_ano_proyecto( $post->ID );
+		$permalink = get_permalink( $post->ID );
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-	?>
-		<div class="[ column xmall-12 medium-4 ][ hero ]" style="background-image: url('<?php echo $image[0]; ?>');">
-			<div class="[ color-light ][ padding ]">
-				<h3><?php echo get_the_title(); ?></h3>
-				<p><?php echo $lugar . '. ' . $ano; ?></p>
-			</div>
-		</div>
-	<?php endwhile; wp_reset_query();
+		get_html_project( $permalink, $image[0], get_the_title(), $lugar, $ano );
+	endwhile; wp_reset_query();
 	
 }// show_filtered_projects
-
-/**
- * Prepare query args for project filters
- * @param string $ano
- * @param string $arquitecto_despacho
- * @param string $lugar
- * @param string $tipologia
- * @return array $args
- */
-function get_archive_filter_args( $ano, $arquitecto_despacho, $lugar, $tipologia ){
-	
-	$args = array(
-	    'posts_per_page'	=> -1,
-	    'post_type' 		=> 'archivo',
-	    'tax_query'			=> array(
-	    	'relation'		=> 'AND'
-        ),
-	);
-
-	if( '' !== $ano ){
-		$ano_arr = array(
-			'taxonomy' => 'ano',
-            'field' => 'slug',
-            'terms' => $ano,
-			);
-		array_push( $args['tax_query'], $ano_arr );
-	}
-
-	if( '' !== $arquitecto_despacho ){
-		$arquitecto_despacho_arr = array(
-			'taxonomy' => 'arquitecto-despacho',
-            'field' => 'slug',
-            'terms' => $arquitecto_despacho,
-			);
-		array_push( $args['tax_query'], $arquitecto_despacho_arr );
-	}
-
-	if( '' !== $lugar ){
-		$lugar_arr = array(
-			'taxonomy' => 'lugar',
-            'field' => 'slug',
-            'terms' => $lugar,
-			);
-		array_push( $args['tax_query'], $lugar_arr );
-	}
-
-	if( '' !== $tipologia ){
-		$tipologia_arr = array(
-			'taxonomy' => 'tipologia',
-            'field' => 'slug',
-            'terms' => $tipologia,
-			);
-		array_push( $args['tax_query'], $tipologia_arr );
-	}
-
-	return $args;
-}// get_archive_filter_args
 
 
 
@@ -313,6 +246,85 @@ function get_ano_proyecto( $post_id ){
 
 }// get_ano_proyecto
 
+/**
+ * Prepare query args for project filters
+ * @param string $permalink
+ * @param string $image
+ * @param string $title
+ * @param string $lugar
+ * @param string $ano
+ */
+function get_html_project( $permalink, $image, $title, $lugar, $ano ){
+	?>
+	<article class="[ column xmall-12 medium-6 large-4 ][ card ][ color-light ][ relative ][ margin-bottom ]">
+	 	<a class="[ block ]" href="<?php echo $permalink ?>">
+			<img class="[ card__image ]" src="<?php echo $image ?>" alt="">
+	 	</a>
+	 	<div class="[ card__info ]">
+	 		<h3 class="[ no-margin ]"><?php echo $title; ?></h3>
+			<p><?php echo $lugar . '. ' . $ano; ?></p>
+	 	</div>
+	</article>
+	<?php
+}
+
+/**
+ * Prepare query args for project filters
+ * @param string $ano
+ * @param string $arquitecto_despacho
+ * @param string $lugar
+ * @param string $tipologia
+ * @return array $args
+ */
+function get_archive_filter_args( $ano, $arquitecto_despacho, $lugar, $tipologia ){
+	
+	$args = array(
+	    'posts_per_page'	=> -1,
+	    'post_type' 		=> 'archivo',
+	    'tax_query'			=> array(
+	    	'relation'		=> 'AND'
+        ),
+	);
+
+	if( '' !== $ano ){
+		$ano_arr = array(
+			'taxonomy' => 'ano',
+            'field' => 'slug',
+            'terms' => $ano,
+			);
+		array_push( $args['tax_query'], $ano_arr );
+	}
+
+	if( '' !== $arquitecto_despacho ){
+		$arquitecto_despacho_arr = array(
+			'taxonomy' => 'arquitecto-despacho',
+            'field' => 'slug',
+            'terms' => $arquitecto_despacho,
+			);
+		array_push( $args['tax_query'], $arquitecto_despacho_arr );
+	}
+
+	if( '' !== $lugar ){
+		$lugar_arr = array(
+			'taxonomy' => 'lugar',
+            'field' => 'slug',
+            'terms' => $lugar,
+			);
+		array_push( $args['tax_query'], $lugar_arr );
+	}
+
+	if( '' !== $tipologia ){
+		$tipologia_arr = array(
+			'taxonomy' => 'tipologia',
+            'field' => 'slug',
+            'terms' => $tipologia,
+			);
+		array_push( $args['tax_query'], $tipologia_arr );
+	}
+
+	return $args;
+}// get_archive_filter_args
+
 
 
 /*------------------------------------*\
@@ -345,7 +357,8 @@ function send_email_contacto(){
 	$message .= '</body></html>';
 
 	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
-	$mail = wp_mail($to, $subject, $message, $headers );
+
+	$mail = wp_mail($to_email, $subject, $message, $headers );
 
 	if( ! $mail ) {
 		$message = array(
@@ -356,16 +369,16 @@ function send_email_contacto(){
 		exit;
 	}
 
-		$message = array(
-			'error'		=> 0,
-			'message'	=> 'Gracias por tu mensaje ' . $nombre . '. En breve nos pondremos en contacto contigo.',
-		);
-		echo json_encode($message , JSON_FORCE_OBJECT);
-		exit();
+	$message = array(
+		'error'		=> 0,
+		'message'	=> 'Gracias por tu mensaje ' . $nombre . '. En breve nos pondremos en contacto contigo.',
+	);
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
 
-	}// send_email_contacto
-	add_action("wp_ajax_send_email_contacto", "send_email_contacto");
-	add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
+}// send_email_contacto
+add_action("wp_ajax_send_email_contacto", "send_email_contacto");
+add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
 
 
 

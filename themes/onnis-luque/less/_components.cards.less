@@ -18,3 +18,46 @@
 .lightbox p{
 
 }
+
+.card{
+	height: 200px;
+	overflow: hidden;
+
+	@media (min-width: @small){
+		
+	}
+	@media (min-width: @medium){
+		
+	}
+	@media (min-width: @large){
+		height: 250px;
+	}
+	@media (min-width: @xlarge){
+	}
+}
+
+.card__image {
+	width: 150%; height: auto;
+	.transition;
+}
+
+.card:hover .card__image {
+	width: 130%;
+}
+
+.card__image--wide {
+	width: 110%;
+	.transition;
+}
+
+.card:hover .card__image--wide {
+	width: 100%;
+}
+
+.card__info{
+	position: absolute;
+	bottom: 0;
+	padding-left: @unit;
+	padding-bottom: @unit;
+}
+

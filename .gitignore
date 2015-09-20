@@ -28,3 +28,7 @@ node_modules
 
 # videos
 themes/ur-imprint/videos
+
+#Mac
+.DS_Store
+themes/onnis-luque/less/.DS_Store

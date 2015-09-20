@@ -5,8 +5,8 @@
 	display: inline-block;
 	padding: 8px 20px; border: 2px solid transparent; margin: 8px;
 	.border-radius(3px);
-	.font( 16px, 1.1, 300 ); text-align: center; text-decoration: none; text-transform: lowercase;
-	background-color: darken(@light, 10%); color: @dark;
+	.font( 16px, 1.1, 300 ); text-align: center; text-decoration: none; 
+	background-color: darken(@light, 10%); color: @dark; font-weight: 300;
 	.transition;
 
 	&:hover{
@@ -49,8 +49,8 @@
 }
 
 .button--primary{
-	border-color: fade(@dark, 50%);
-	color: @intermediate;
+	border-color: fade(@dark, 10%); 
+	color: @dark;
 	background: @primary;
 
 	&:hover{
@@ -99,16 +99,41 @@
 }
 
 .button--ink{
+	margin-top: 0;
+	padding-top: @unit;
+	border-color: transparent;
+	color: @light;
+	background: transparent;
+
+
+	&:hover{
+		background-color: transparent;
+		color: darken(@light, 10%);
+	}
+
+}
+
+.button--ink__intermediate{
+	margin-top: 0;
+	padding-top: @unit;
 	border-color: transparent;
 	color: @intermediate;
 	background: transparent;
+
 
 	&:hover{
 		background-color: transparent;
 		color: darken(@intermediate, 10%);
 	}
+
+	.active { background-color: @primary }
+
 }
 
+.active {
+	border-top: 4px solid @light;
+	font-weight: 700;
+}
 
 
 
@@ -238,6 +263,8 @@
 	&:hover{
 		background-color: @warning;
 	}
+
+
 }
 
 /**

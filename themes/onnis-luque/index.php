@@ -4,10 +4,12 @@
 ==== HERO
 ================================================== -->
 <section class="[ hero hero-home ]">
-	<div class="[ screen screen-intermediate--80 ][ z-index-1 ]"></div>
-	<div class="[ text-center ][ xmall-12 ][ center--bottom ][ z-index-2 ]">
-		<a href="<?php echo site_url( 'proyectos' ); ?>" class="[ button button--primary button--hollow ]">Ver proyectos</a>
-		<a href="<?php echo site_url( 'contacto' ); ?>" class="[ button button--primary button--hollow ]">Contáctame</a>
+	<div class="[ opacity-gradient--top-bottom ][ z-index-2 ]"></div>
+	<div class="[ text-center ][ center-bottom ][ z-index-2 ][ xmall-12 ]">
+		<div class="wrapper">
+			<a href="<?php echo site_url( 'archivo' ); ?>" class="[ button button--primary ][ inline-block ][ align-middle ]">Ver proyectos</a>
+			<a href="<?php echo site_url( 'contacto' ); ?>" class="[ button button--primary ][ inline-block ][ align-middle ][ js-modal-opener ]" data-modal="contacto">Contáctame</a>
+		</div>
 	</div>
 </section><!-- hero -->
 
@@ -21,25 +23,31 @@ $archivo_args = array(
 );
 $archivo_query = new WP_Query( $archivo_args );
 if( $archivo_query->have_posts() ) : ?>
-	<section class="[ archivo ]">
+	<section class="[ archivo ][ margin-top-bottom--large ]">
 		<div class="[ wrapper ]">
-			<h2 class="text-center">Proyectos <strong>Recientes</strong></h2>
-			<div class="row">
+			
+			<div class="[ row ][ large-10 center ]">
+				
+				<h2 class="[ uppercase ][ margin-bottom--small ][ text-thin ]">Proyectos <span class="[ text-bold ]" >Recientes</span></h2>
 				<?php
 				while ( $archivo_query->have_posts() ) : $archivo_query->the_post();
 					$lugar = get_lugar_proyecto( $post->ID );
 					$ano = get_ano_proyecto( $post->ID );
+					$permalink = get_permalink( $post->ID );
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 				?>
-					<div class="[ column xmall-12 medium-6 ][ hero ]" style="background-image: url('<?php echo $image[0]; ?>');">
-						<div class="[ color-light ][ padding ]">
-							<h3><?php echo get_the_title(); ?></h3>
-							<p><?php echo $lugar . '. ' . $ano; ?></p>
-						</div>
-					</div>
+					<article class="[ column xmall-12 medium-6 ][ card ][ color-light ][ relative ][ margin-bottom ]">
+					 	<a class="[ block ]" href="<?php echo $permalink ?>">
+							<img class="[ card__image ]" src="<?php echo $image[0] ?>" alt="">
+					 	</a>
+					 	<div class="[ card__info ]">
+					 		<h3 class="[ no-margin ]"><?php echo get_the_title(); ?></h3>
+							<p class="[ text-thin ]"><?php echo $lugar . '. ' . $ano; ?></p>
+					 	</div>
+					</article>
 				<?php endwhile; ?>
 				<div class="[ column xmall-12 ][ text-center ]">
-					<a href="<?php echo site_url( 'contacto' ); ?>" class="[ button button--primary ]">Contáctame</a>
+					<a href="<?php echo site_url( 'archivo' ); ?>" class="[ button button--dark ]">Ver todos</a>
 				</div>
 			</div>
 		</div>
@@ -47,3 +55,4 @@ if( $archivo_query->have_posts() ) : ?>
 <?php endif; wp_reset_query(); ?>
 
 <?php get_footer(); ?>
+

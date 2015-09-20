@@ -24,7 +24,7 @@
 		<link rel="icon" type="image/png" href="<?php echo THEMEPATH; ?>favicon/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="<?php echo THEMEPATH; ?>favicon/favicon-16x16.png" sizes="16x16" />
 		<link rel="icon" type="image/png" href="<?php echo THEMEPATH; ?>favicon/favicon-128.png" sizes="128x128" />
-		<meta name="application-name" content="Little Crow"/>
+		<meta name="application-name" content="Onnis Luque Photography"/>
 		<meta name="msapplication-TileColor" content="#009C9F" />
 		<meta name="msapplication-TileImage" content="<?php echo THEMEPATH; ?>favicon/mstile-144x144.png" />
 		<meta name="msapplication-square70x70logo" content="<?php echo THEMEPATH; ?>favicon/mstile-70x70.png" />
@@ -33,7 +33,7 @@
 		<meta name="msapplication-square310x310logo" content="<?php echo THEMEPATH; ?>favicon/mstile-310x310.png" />
 
 		<!-- Google font(s) -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,100' rel='stylesheet' type='text/css'>
 		<!-- Font awesome -->
 		<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
@@ -54,30 +54,92 @@
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 		<div class="[ container ]">
-			<!-- =================================================
-			==== MOBILE MENU
-			================================================== -->
-			<header class="[ xmall-12 ][ padding-top-bottom--small ][ hidden--xlarge ]">
-				<div class="[ wrapper ]">
-					<div class="[ text-center color-light ]">
-						<img class="[ svg icon icon--onnis-square ][ center block ]" src="<?php echo THEMEPATH; ?>icons/onnis-square.svg">
+			
+			<header class="[  ]">
+				<!-- =================================================
+				==== MENU
+				================================================== -->
+				<?php if ( is_home() ) : ?>
+					<div class="[ hidden--large ]">
+						<div class="[ wrapper ]">
+							<div class="[ row ][ padding--top--small padding--bottom--small ]">
+								<div class="[ xmall-4 ][ center ][ relative ]">
+									<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-square.svg" class="[ absolute ][ image-responsive ][ svg ][ bg-primary ]">
+								</div>
+								<div class="[ xmall-6 large-1 ][ inline-block align-middle ]">
+									&nbsp;
+								</div><div class="[ xmall-6 ][ inline-block align-middle ]">
+									<a class="[ block ][ button--hollow ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
+										<span class="[ block ][ bg-light ][ no-padding ]">
+											<img class="[ image-responsive ][ svg icon icon--medium ][ padding--small ][ secondary ]" src="<?php echo THEMEPATH; ?>images/hamburger.svg" alt="menu">
+										</span>
+									</a>
+								</div>
+							</div><!-- row -->
+						</div><!-- wrapper -->
+					</div><!-- hidden-large -->
+
+					<div class="shown--large">
+						<div class="[ wrapper ]">
+							<div class="[ xmall-12 ][ inline-block align-middle ][ text-center ][ margin-top ]">
+								<div class="[ xmall-2 ][ center ][ margin-bottom ]">
+									<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-square.svg" class="[ image-responsive ][ svg ][ icon ][ color-primary ]">
+								</div>
+								<hr class="[ no-margin ][ divider divider--light ]">
+								<nav class="[ text-center ][ uppercase ]">
+									<a href="<?php echo site_url(); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo is_home() ? 'active' : ''; ?> ]">Inicio</a>
+									<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Archivo</a>
+									<a href="<?php echo site_url('talleres'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ]">Talleres</a>
+									<a href="<?php echo site_url('editorial'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ]">Editorial</a>
+								</nav>
+							</div>
+						</div>
 					</div>
-				</div>
+				
+				<?php else: ?>
+					<div class="[ hidden--large ][ bg-light ][ border-bottom ]">
+						<div class="[ wrapper ]">
+							<div class="[ row ][ padding--top--small padding--bottom--small ]">
+								<div class="[ xmall-6 large-1 ][ inline-block align-middle ]">
+									<div class="[ logo ]">
+										<a href="<?php echo site_url(); ?>">
+											<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-square.svg" class="[ image-responsive ][ svg ]">
+										</a>
+									</div>
+								</div><div class="[ xmall-6 ][ inline-block align-middle ]">
+									<a class="[ block ][ button--hollow ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
+										<span class="[ block ][ bg-light ][ no-padding ]">
+											<img class="[ image-responsive ][ svg icon icon--medium ][ padding--small ][ secondary ]" src="<?php echo THEMEPATH; ?>images/hamburger.svg" alt="menu">
+										</span>
+									</a>
+								</div>
+							</div><!-- row -->
+						</div><!-- wrapper -->
+					</div><!-- hidden-large -->
+
+					<div class="[ shown--large ][ bg-light ]">
+						<div class="[ wrapper ]">
+							<div class="[ row ][ padding--top--small padding--bottom--small ]">
+								<div class="[ xmall-6 ][ inline-block align-middle ]">
+									<div class="[ logo ]">
+										<a href="<?php echo site_url(); ?>">
+											<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-horizontal.svg" class="[ svg ][ icon icon--xlarge ][ color-intermediate ]">
+										</a>
+									</div>
+								</div><div class="[ xmall-6 ][ inline-block align-middle ]">
+									<nav class="[ text-center ][ uppercase ]">
+										<a href="<?php echo site_url(); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo is_home() ? 'active' : ''; ?> ]">Inicio</a>
+										<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Archivo</a>
+										<a href="<?php echo site_url('talleres'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ]">Talleres</a>
+										<a href="<?php echo site_url('editorial'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ]">Editorial</a>
+									</nav>
+								</div>
+							</div>
+							<hr class="[ divider ]">
+						</div>
+					</div>
+
+				<?php endif; ?>
 			</header>
 
-			<!-- =================================================
-			==== DESKTOP MENU
-			================================================== -->
-			<header class="[ xmall-12 ][ shown--large ][ padding-top-bottom--small ]">
-				<div class="[ wrapper ]">
-					<div class="[ xmall-12 ][ inline-block align-middle ][ text-center ]">
-						<nav class="[ text-center ]">
-							<a href="<?php echo site_url(); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo is_home() ? 'active' : ''; ?> ]">Inicio</a>
-							<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Archivo</a>
-							<a href="<?php echo site_url('talleres'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ]">Talleres</a>
-							<a href="<?php echo site_url('editorial'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ]">Editorial</a>
-						</nav><!-- categorias -->
-					</div>
-				</div>
-			</header>
-			<div class="[ main ]">
+			<div class="[ <?php echo is_home() ? 'main-home' : 'main' ?> ]">

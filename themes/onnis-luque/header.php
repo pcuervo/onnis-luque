@@ -56,18 +56,18 @@
 		<div class="[ container ]">
 
 			<section class="[ menu-nav ][ hidden--large ][ hide ][ relative z-index-6 ]">
-				<div class="[ wrapper ]">
+				<div class="[ wrapper ][ padding--top-bottom--small ]">
 					<a class="[ block ][ pull-right ][ color-intermediate ][ js-menu-toggler ]" data-menu="nav" href="#">
 						<span class="[ block ][ no-padding ]">
-							<img class="[ svg icon icon--small ][ padding--small ][ light ]" src="<?php echo THEMEPATH; ?>images/close.svg" alt="menu">
+							<img class="[ svg icon icon--small ][ light ]" src="<?php echo THEMEPATH; ?>images/close.svg" alt="menu">
 						</span>
 					</a>
 
 					<nav class="[ text-center ][ uppercase ]">
-						<a href="<?php echo site_url(); ?>" class="[ <?php echo is_home() ? 'active' : ''; ?> ][ light ][ button button--hollow ][ text-center uppercase ][ padding ][ xmall-12 ]">Inicio</a>
-						<a href="<?php echo site_url('archivo'); ?>" class="[ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ] [ light ][ button button--hollow ][ text-center uppercase ][ padding ][ xmall-12 ]">Archivo</a>
-						<a href="<?php echo site_url('talleres'); ?>" class="[ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ] [ light ][ button button--hollow ][ text-center uppercase ][ padding ][ xmall-12 ]">Talleres</a>
-						<a href="<?php echo site_url('editorial'); ?>" class="[ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ] [ light ][ button button--hollow ][ text-center uppercase ][ padding ][ xmall-12 ]">Editorial</a>
+						<a href="<?php echo site_url(); ?>" class="[ <?php echo is_home() ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Inicio</a>
+						<a href="<?php echo site_url('archivo'); ?>" class="[ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Archivo</a>
+						<a href="<?php echo site_url('talleres'); ?>" class="[ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Talleres</a>
+						<a href="<?php echo site_url('editorial'); ?>" class="[ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Editorial</a>
 					</nav><!-- categorias -->
 
 				</div><!-- wrapper -->
@@ -89,7 +89,7 @@
 							class="[ xmall-4 ][ inline-block align-top ]">
 								<a class="[ block ][ pull-right ][ js-menu-toggler ]" data-menu="nav" href="#">
 									<span class="[ block ][ no-padding ]">
-										<img class="[ svg icon icon--medium ][ color-light ][ padding--small ][ secondary ]" src="<?php echo THEMEPATH; ?>images/hamburger.svg" alt="menu">
+										<img class="[ svg icon icon--medium ][ color-light ][ padding--xmall ]" src="<?php echo THEMEPATH; ?>images/hamburger.svg" alt="menu">
 									</span>
 								</a>
 							</div>

@@ -103,6 +103,13 @@ function getFooterHeight(){
 }// getFooterHeight
 
 /**
+ * Get header's height
+ */
+function getMenuHeight(){
+	return $('.menu-nav').outerHeight();
+}// getHeaderHeight
+
+/**
  * Get the scrolled pixels in Y axis
  */
 function getScrollY() {

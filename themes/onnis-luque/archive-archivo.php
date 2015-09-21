@@ -28,9 +28,9 @@
 				<article>
 					<div class="[ row ][ padding--top ]">
 						<div class="[ xmall-6 ][ pull-right ][ hidden--large-inline ][ inline-block align-middle ]">
-							<a class="[ block ][ button--light button--hollow ][ pull-right ][ bg-transparent ][ js-modal-closer ]" data-modal="filtros" href="#">
+							<a class="[ block ][ pull-right ][ bg-transparent ][ js-modal-closer ]" data-modal="filtros" href="#">
 								<span class="[ block ][ no-padding ]">
-									<img class="[ svg icon icon--medium ][ padding--small ][ light ]" src="<?php echo THEMEPATH; ?>images/close.svg" alt="menu">
+									<img class="[ svg icon icon--medium ][ color-intermediate ][ padding--small ]" src="<?php echo THEMEPATH; ?>images/close.svg" alt="menu">
 								</span>
 							</a>
 						</div>

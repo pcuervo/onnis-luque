@@ -64,13 +64,13 @@
 						<div class="[ wrapper ]">
 							<div class="[ row ][ padding--top--small padding--bottom--small ]">
 								<div class="[ xmall-4 ][ center ][ relative ]">
-									<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-square.svg" class="[ absolute ][ image-responsive ][ svg ][ bg-primary ]">
+									<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-square.svg" class="[ absolute ][ icon ][ svg ][ color-primary ]">
 								</div>
 								<div class="[ xmall-6 large-1 ][ inline-block align-middle ]">
 									&nbsp;
 								</div><div class="[ xmall-6 ][ inline-block align-middle ]">
-									<a class="[ block ][ button--hollow ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
-										<span class="[ block ][ bg-light ][ no-padding ]">
+									<a class="[ block ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
+										<span class="[ block ][ no-padding ][ color-light ]">
 											<img class="[ image-responsive ][ svg icon icon--medium ][ padding--small ][ secondary ]" src="<?php echo THEMEPATH; ?>images/hamburger.svg" alt="menu">
 										</span>
 									</a>
@@ -83,7 +83,7 @@
 						<div class="[ wrapper ]">
 							<div class="[ xmall-12 ][ inline-block align-middle ][ text-center ][ margin-top ]">
 								<div class="[ xmall-2 ][ center ][ margin-bottom ]">
-									<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-square.svg" class="[ image-responsive ][ svg ][ icon ][ color-primary ]">
+									<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-square.svg" class="[ image-responsive ][ svg ][ icon ][ color-light ]">
 								</div>
 								<hr class="[ no-margin ][ divider divider--light ]">
 								<nav class="[ text-center ][ uppercase ]">
@@ -97,17 +97,17 @@
 					</div>
 				
 				<?php else: ?>
-					<div class="[ hidden--large ][ bg-light ][ border-bottom ]">
+					<div class="[ hidden--large ][ bg-light ]">
 						<div class="[ wrapper ]">
 							<div class="[ row ][ padding--top--small padding--bottom--small ]">
 								<div class="[ xmall-6 large-1 ][ inline-block align-middle ]">
 									<div class="[ logo ]">
 										<a href="<?php echo site_url(); ?>">
-											<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-square.svg" class="[ image-responsive ][ svg ]">
+											<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-triangle.svg" class="[ svg ][ icon ][ color-intermediate ]">
 										</a>
 									</div>
 								</div><div class="[ xmall-6 ][ inline-block align-middle ]">
-									<a class="[ block ][ button--hollow ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
+									<a class="[ block ][ pull-right ][ js-modal-opener ][ color-intermediate ]" data-modal="nav" href="#">
 										<span class="[ block ][ bg-light ][ no-padding ]">
 											<img class="[ image-responsive ][ svg icon icon--medium ][ padding--small ][ secondary ]" src="<?php echo THEMEPATH; ?>images/hamburger.svg" alt="menu">
 										</span>
@@ -115,7 +115,9 @@
 								</div>
 							</div><!-- row -->
 						</div><!-- wrapper -->
+						<hr class="[ divider ]">
 					</div><!-- hidden-large -->
+
 
 					<div class="[ shown--large ][ bg-light ]">
 						<div class="[ wrapper ]">

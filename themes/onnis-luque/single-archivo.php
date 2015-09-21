@@ -30,12 +30,32 @@
 
 	<div class="[ margin-bottom--large ][ single-content ]">
 		<div class="[ wrapper ]">
-			<div class="[ row ]">
-				<div class="[ columna small-12 medium-10 large-8 center ][ text-center ]">
-					<h3>Descripción</h3>
-					<?php the_content(); ?>
-				</div>
+			<div class="[ xmall-12 medium-10 large-8 center ][ text-center ]">
+				<h3>Descripción</h3>
+				<?php the_content(); ?>
 			</div>
+
+			<?php
+			$content = $post->post_content;
+			if( has_shortcode( $content, 'gallery' ) ) {
+				$galleries = get_galleries_from_content($post);
+				foreach ($galleries as $gallery => $galleryIDs) {
+
+					$images = sga_gallery_images('medium', $galleryIDs); ?>
+
+					<div class="[ row ]">
+						<?php foreach ($images as $key => $image) {
+							$imageID 	= $image[4];
+							$imageURL	= $image[0];
+							?>
+
+							<a class="[ column xmall-12 medium-6 ][ card ][ margin-bottom ][ bg-cover ]" style="background-image: url('<?php echo $imageURL; ?>')" href="#" data-number="<?php echo $key+1; ?>">
+							</a>
+						<?php } ?>
+					</div><!-- row -->
+				<?php }
+			} ?>
+
 		</div><!-- .wrapper -->
 	</div>
 </section>

@@ -99,7 +99,7 @@
 
 				<!-- Home mobile header when scrolled
 				================================================== -->
-				<header class="[ header--home ][ xmall-12 ][ drop-shadow ][ scrolled ][ hide ][ hidden--large ]">
+				<header class="[ header--home ][ drop-shadow ][ scrolled ][ hide ][ hidden--large ]">
 					<div class="[ wrapper ]">
 						<div class="[ row ][  ]">
 							<div class="[ span xmall-6 large-1 ]">
@@ -147,7 +147,7 @@
 
 				<!-- Home desktop header when scrolled
 				================================================== -->
-				<header class="[ header--home--desktop ][ xmall-12 ][ drop-shadow ][ bg-light ][ shown--large ][ scrolled ][ hide ]">
+				<header class="[ header--home--desktop [ drop-shadow ][ bg-light ][ shown--large ][ scrolled ][ hide ]">
 					<div class="[ wrapper ]">
 						<div class="[ row ][ padding--top--small padding--bottom--small ]">
 							<div class="[ xmall-4 ][ inline-block align-middle ]">
@@ -173,7 +173,7 @@
 
 				<!-- !Home header mobile
 				================================================== -->
-				<header class="[ header header-not-home ][ xmall-12 ][ drop-shadow ][ hidden--large ][ bg-light ]">
+				<header class="[ header header-not-home ][ drop-shadow ][ hidden--large ][ bg-light ]">
 					<div class="[ wrapper ]">
 						<div class="[ row ][  ]">
 							<div class="[ span xmall-6 large-1 ]">
@@ -196,7 +196,7 @@
 
 				<!-- !Home header desktop
 				================================================== -->
-				<header class="[ shown--large ][ bg-light ][ header header-not-home__desktop ]">
+				<header class="[ header header-not-home__desktop ][ shown--large ][ bg-light ][ drop-shadow ][ overflow-hidden ]">
 					<div class="[ wrapper ]">
 						<div class="[ row ]">
 							<div class="[ xmall-4 ][ inline-block align-middle ]">

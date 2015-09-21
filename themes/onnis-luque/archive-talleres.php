@@ -14,12 +14,15 @@
 					$fecha_taller = get_post_meta($post->ID, '_fecha_taller_meta', true);
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 				?>
-					<div class="[ xmall-12 ][ margin-bottom ][ center ]" style="background-image: url('<?php echo $image[0]; ?>');">
+					<div class="[ xmall-12 ][ margin-bottom ][ relative ][ bg-cover ]" style="background-image: url('<?php echo $image[0]; ?>');">
 						<div class="[ color-light ][ padding ]">
-							<h3 class="[ margin-bottom--large margin-top ]"><?php echo get_the_title(); ?></h3>
+							<h3 class="[ margin-bottom--large margin-top ][ uppercase ]"><?php echo get_the_title(); ?></h3>
 							<p><?php echo $lugar_taller; ?></p>
-							<p><?php echo $fecha_taller; ?></p>
-							<a href="<?php echo get_permalink(); ?>" class="[ button button--primary ][ pull-right ]">Mas información</a>
+							<p class="[ margin-bottom ]"><?php echo $fecha_taller; ?></p>
+							<p></p>
+							<div class="[ clearfix ]">
+								<a href="<?php echo get_permalink(); ?>" class="[ button button--primary ][ no-margin ][ pull-right ]">Mas información</a>
+							</div>
 						</div>
 
 					</div>

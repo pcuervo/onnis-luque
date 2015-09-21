@@ -110,12 +110,8 @@ if( $archivo_query->have_posts() ) : ?>
 					</form>
 				</div>
 			</div>
-
-
 		</div>
-
-		</div><!-- modal-content -->
-	</div>
+	</div><!-- modal-content -->
 </section>
 
 

@@ -230,7 +230,21 @@ function get_lugar_proyecto( $post_id ){
 
 	return preg_replace( '/ ,/', ',', $lugar, 1 );
 
-}// get_lugar_proyecto
+}// get_autor_proyecto
+
+/**
+ * Get "autor" taxonomy term from post type "Proyectos"
+ * @param int $post_id
+ * @return array $autor
+ */
+function get_autor_proyecto( $post_id ){
+
+	$terms_autor = wp_get_post_terms( $post_id, 'arquitecto-despacho' );
+	$autor = str_replace( '-', ',', $terms_autor[0]->name );
+
+	return preg_replace( '/ ,/', ',', $autor, 1 );
+
+}// get_autor_proyecto
 
 /**
  * Get taxonomy term from post type "Proyectos"

@@ -173,20 +173,20 @@
 
 				<!-- !Home header mobile
 				================================================== -->
-				<header class="[ header header-not-home ][ xmall-12 ][ drop-shadow ][ bg-light ][ hidden--large ]">
+				<header class="[ header header-not-home ][ xmall-12 ][ drop-shadow ][ hidden--large ][ bg-light ]">
 					<div class="[ wrapper ]">
 						<div class="[ row ][  ]">
 							<div class="[ span xmall-6 large-1 ]">
 								<a class="[ block ]" data-modal="nav" href="<?php echo site_url(); ?>">
 									<span class="[ block ][ no-padding ]">
-										<img class="[ svg icon icon--medium ][ color-intermediate ][ padding--small ]" src="<?php echo THEMEPATH; ?>images/logo-onnis-triangle.svg" alt="menu">
+										<img class="[ svg icon icon--medium ][ padding--small ][ color-intermediate ]" src="<?php echo THEMEPATH; ?>images/logo-onnis-triangle.svg" alt="menu">
 									</span>
 								</a>
 							</div>
 							<div class="[ span xmall-6 ]">
 								<a class="[ block ][ pull-right ][ js-menu-toggler ]" data-menu="nav" href="#">
 									<span class="[ block ][ no-padding ]">
-										<img class="[ svg icon icon--medium ][ color-intermediate ][ padding--small ]" src="<?php echo THEMEPATH; ?>images/hamburger.svg" alt="menu">
+										<img class="[ svg icon icon--medium ][ padding--small ]<?php echo ( is_singular('archivo') ? '[ color-intermediate ]' : '[ color-intermediate ]') ?>" src="<?php echo THEMEPATH; ?>images/hamburger.svg" alt="menu">
 									</span>
 								</a>
 							</div>

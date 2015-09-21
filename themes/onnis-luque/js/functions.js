@@ -78,7 +78,7 @@ function closeModal(){
  * @param element to be shown
 **/
 function toggleMenu(element){
-	$(element).removeClass('hide');
+	$(element).toggleClass('hide');
 }//openModal
 
 

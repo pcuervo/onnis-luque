@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    #HELPERS
+	#HELPERS
 \*------------------------------------*/
 
 /**
@@ -35,6 +35,10 @@
 **/
 .relative{ position: relative !important; }
 .absolute{ position: absolute !important; }
+
+.absolute--reset{
+	top: 0; left: 0;
+}
 
 /**
  * Opacity
@@ -89,6 +93,13 @@
 	.transition(all 0.1s ease);
 }
 
+
+/**
+ * Shadows
+**/
+.drop-shadow{
+	.drop-shadow(0 2px 4px 1px rgba(0,0,0,.3));
+}
 
 
 /*------------------------------------*\
@@ -190,22 +201,22 @@
 /**
  * Absolute
 **/
-.center-full{ 
-	.center-full(); 
+.center-full{
+	.center-full();
 
 	width: 80%;
 	@media (min-width: @small){
 	}
 	@media (min-width: @medium){
-		
+
 	}
 	@media (min-width: @large){
 		width: 50%;
 	}
 	@media (min-width: @xlarge){
-		
+
 	}
-	
+
 }
 .center-top{ .center-top(); }
 .center-bottom{ .center-bottom(); }

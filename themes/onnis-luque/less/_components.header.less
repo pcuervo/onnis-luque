@@ -5,14 +5,32 @@ header{
 	.transition();
 }
 
-.bg-logo-wrapper{
-	width: 100px;
+header.hide{
+	top: -100px;
 }
 
-.bg-logo{
-	padding-bottom: 34.7058824%;  // height/width of image
+/**
+ * Header once user scrolls
+**/
+.header--home{
+	height: auto;
 }
 
-.logo {
-	width: 60px;
+
+/**
+ * Header once user scrolls
+**/
+
+header.scrolled{
+	height: 47px;
+	top: 0;
+	background: @light;
+
+	@media (min-width: @xlarge){
+		padding: 5px 0;
+	}
+}
+
+header.scrolled.hide{
+	top: -50px;
 }

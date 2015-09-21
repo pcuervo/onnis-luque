@@ -73,12 +73,63 @@ function closeModal(){
 	$('body').css('overflow', 'visible');
 }//closeModal
 
+/**
+ * Toggles Menu
+ * @param element to be shown
+**/
+function toggleMenu(element){
+	$(element).removeClass('hide');
+}//openModal
+
 
 
 
 /*------------------------------------*\
 	#GET / SET FUNCTIONS
 \*------------------------------------*/
+
+/**
+ * Get header's height
+ */
+function getHeaderHeight(){
+	return $('header').not('header.scrolled').outerHeight();
+}// getHeaderHeight
+
+/**
+ * Get footer's height
+ */
+function getFooterHeight(){
+	return $('footer').outerHeight();
+}// getFooterHeight
+
+/**
+ * Get the scrolled pixels in Y axis
+ */
+function getScrollY() {
+	return $(window).scrollTop();
+}// getScrollY
+
+/**
+ * Set conainer's padding bottom
+ */
+function setContainerPaddingBottom(){
+	var footerHeight = getFooterHeight();
+	footerHeight = footerHeight;
+	$('.main').css('padding-bottom', footerHeight );
+}// setContainerPaddingBottom
+
+/**
+ * Set main's padding top
+ */
+function setMainPaddingTop(){
+	var headerHeight = getHeaderHeight();
+	var sy = getScrollY();
+	if ( sy >= headerHeight ) {
+		$('.main').css('padding-top', 'initial');
+	} else {
+		$('.main').css('padding-top', headerHeight);
+	}
+}// setMainPaddingTop
 
 /**
  * Show HTML if contact form was sent succesfully.
@@ -100,6 +151,28 @@ function getContactErrorHTML( message ){
 
 
 
+
+
+/*------------------------------------*\
+	#TOGGLE FUNCTIONS
+\*------------------------------------*/
+
+
+/**
+ * Toggle Header
+ */
+ function toggleHeader(){
+	var headerHeight = getHeaderHeight();
+	var sy = getScrollY	();
+
+	if ( sy >= 10 ) {
+		$('header.scrolled').removeClass('hide');
+		$('header').not('header.scrolled').addClass('hide');
+	} else {
+		$('header.scrolled').addClass('hide');
+		$('header').not('header.scrolled').removeClass('hide');
+	}
+}// toggleHeader
 
 
 /*------------------------------------*\

@@ -18,12 +18,23 @@ function footer_scripts(){
 			/**
 			 * On load
 			**/
-			
+
 			imgToSvg();
-			
+			toggleHeader();
+
 			/**
 			 * Triggered events
 			**/
+
+			$(window).scroll(function(){
+				toggleHeader();
+				setContainerPaddingBottom();
+			});
+
+			$(window).resize(function(){
+				toggleHeader();
+				setContainerPaddingBottom();
+			});
 
 			$('.js-modal-opener').on('click', function(e){
 				e.preventDefault();
@@ -35,6 +46,13 @@ function footer_scripts(){
 			$('.js-modal-closer').on('click', function(e){
 				e.preventDefault();
 				closeModal();
+			});
+
+			$('.js-menu-toggler').on('click', function(e){
+				e.preventDefault();
+				var menu = $(this).data('menu');
+				var menu = '.menu-'+menu;
+				toggleMenu(menu);
 			});
 
 			/*------------------------------------*\
@@ -52,13 +70,13 @@ function footer_scripts(){
 				runValidation('.js-contact-form');
 				// $('.js-contact-form').on('submit', function(e){
 				// 	e.preventDefault();
-					
+
 				// 	sendContactEmail( $(this) );
 				// });
-			
+
 			<?php endif; ?>
 
-			
+
 
 <?php  ?>
 		</script>

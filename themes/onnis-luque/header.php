@@ -55,7 +55,7 @@
 		<![endif]-->
 		<div class="[ container ]">
 
-			<section class="[ menu-nav ][ hidden--large ][ hide ][ relative z-index-6 ]">
+			<section class="[ menu-nav ][ xmall-12 ][ bg-light ][ hidden--large ][ hide ][ fixed fixed--reset z-index-6 ]">
 				<div class="[ wrapper ][ padding--top-bottom--small ]">
 					<a class="[ block ][ pull-right ][ color-intermediate ][ js-menu-toggler ]" data-menu="nav" href="#">
 						<span class="[ block ][ no-padding ]">

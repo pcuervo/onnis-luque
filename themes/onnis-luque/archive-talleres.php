@@ -5,8 +5,8 @@
 ================================================== -->
 <?php if( have_posts() ) : ?>
 	<section class="[ talleres ][ margin-top ]">
-		<div class="[ wrapper ][ text-center ]">
-			<h2 class="[ text-light ]">Talleres</h2>
+		<div class="[ wrapper ]">
+			<h2 class="[ text-thin ]">Talleres</h2>
 			<div class="[ row ]">
 				<?php
 				while ( have_posts() ) : the_post();
@@ -14,12 +14,12 @@
 					$fecha_taller = get_post_meta($post->ID, '_fecha_taller_meta', true);
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 				?>
-					<div class="[ xmall-12 ][ margin-bottom ][ center ]" style="background-image: url('<?php echo $image[0]; ?>');">
+					<div class="[ xmall-12 ][ margin-bottom ][ center ][ text-center ]" style="background-image: url('<?php echo $image[0]; ?>');">
 						<div class="[ color-light ][ padding ]">
-							<h3 class="[ margin-bottom--large margin-top ]"><?php echo get_the_title(); ?></h3>
-							<p><?php echo $lugar_taller; ?></p>
+							<h3 class="[ margin-bottom margin-top ]"><?php echo get_the_title(); ?></h3>
+							<p class="[ no-margin ]"><?php echo $lugar_taller; ?></p>
 							<p><?php echo $fecha_taller; ?></p>
-							<a href="<?php echo get_permalink(); ?>" class="[ button button--primary ][ pull-right ]">Mas información</a>
+							<a href="<?php echo get_permalink(); ?>" class="[ button button--primary ][ pull-right ][ hidden ]">Mas información</a>
 						</div>
 						
 					</div>

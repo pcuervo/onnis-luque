@@ -5,9 +5,9 @@
 ================================================== -->
 <?php if( have_posts() ) : ?>
 	<section class="[ talleres ][ margin-top ]">
-		<div class="[ wrapper ][ text-center ]">
-			<h2 class="[ text-light ]">Talleres</h2>
-			<div class="[ row ]">
+		<div class="[ wrapper ]">
+			<h2 class="[ text-thin ]">Talleres</h2>
+			<div class="[ row ][ text-center ]">
 				<?php
 				while ( have_posts() ) : the_post();
 					$lugar_taller = get_post_meta($post->ID, '_lugar_taller_meta', true);
@@ -21,7 +21,7 @@
 							<p><?php echo $fecha_taller; ?></p>
 							<a href="<?php echo get_permalink(); ?>" class="[ button button--primary ][ pull-right ]">Mas información</a>
 						</div>
-						
+
 					</div>
 				<?php endwhile; ?>
 			</div>

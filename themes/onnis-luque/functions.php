@@ -109,7 +109,7 @@ function show_filtered_projects( $filters ){
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 		get_html_project( $permalink, $image[0], get_the_title(), $lugar, $ano );
 	endwhile; wp_reset_query();
-	
+
 }// show_filtered_projects
 
 
@@ -213,7 +213,7 @@ function get_proyectos(){
 		$proyectos[basename( get_permalink() )] = get_the_title();
 	endwhile;
 	wp_reset_query();
-	
+
 	return $proyectos;
 
 }// get_proyectos
@@ -256,15 +256,15 @@ function get_ano_proyecto( $post_id ){
  */
 function get_html_project( $permalink, $image, $title, $lugar, $ano ){
 	?>
-	<article class="[ column xmall-12 medium-6 large-4 ][ card ][ color-light ][ relative ][ margin-bottom ]">
-	 	<a class="[ block ]" href="<?php echo $permalink ?>">
-			<img class="[ card__image ]" src="<?php echo $image ?>" alt="">
-	 	</a>
-	 	<div class="[ card__info ]">
-	 		<h3 class="[ no-margin ]"><?php echo $title; ?></h3>
-			<p><?php echo $lugar . '. ' . $ano; ?></p>
-	 	</div>
-	</article>
+	<a class="[ full-height ][ block ][ relative ]" href="<?php echo $permalink ?>">
+		<article class="[ column xmall-12 medium-6 large-4 ][ card ][ color-light ][ relative ][ margin-bottom ]">
+			<img class="[ card__image ][ center-full ]" src="<?php echo $image ?>" alt="">
+			<div class="[ card__info ][ xmall-12 ][ z-index-1 ]">
+				<h3 class="[ no-margin ]"><?php echo $title; ?></h3>
+				<p><?php echo $lugar . '. ' . $ano; ?></p>
+			</div>
+		</article>
+	</a>
 	<?php
 }
 
@@ -277,7 +277,7 @@ function get_html_project( $permalink, $image, $title, $lugar, $ano ){
  * @return array $args
  */
 function get_archive_filter_args( $ano, $arquitecto_despacho, $lugar, $tipologia ){
-	
+
 	$args = array(
 	    'posts_per_page'	=> -1,
 	    'post_type' 		=> 'archivo',
@@ -351,7 +351,7 @@ function send_email_contacto(){
 	if( $telefono !== '' ){
 		$message .= '<p>Teléfono: '. $telefono . '</p>';
 	}
-	
+
 	$message .= '<p>Email: '. $email . '</p>';
 	$message .= '<p>Mensaje: '. $mensaje . '</p>';
 	$message .= '</body></html>';

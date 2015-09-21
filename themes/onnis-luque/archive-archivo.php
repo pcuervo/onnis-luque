@@ -1,16 +1,18 @@
-<?php get_header(); ?>
+<?php
+get_header();
 
-<!-- =================================================
-==== PROYECTOS
-================================================== -->
-<?php if( have_posts() ) : ?>
-	<div class="[ text-center ][ margin-top ]">
-		<a class="[ button button--intermediate ][ js-modal-opener ]" href="#" data-modal="filtros" >Filtrar proyectos</a>
+if( have_posts() ) : ?>
+	<div class="[ text-center ]">
+		<a class="[ button button--primary button--rounded-bottom ][ no-margin ][ js-modal-opener ]" href="#" data-modal="filtros" >Filtrar proyectos</a>
 	</div>
+
+	<!-- =================================================
+	==== PROYECTOS
+	================================================== -->
 	<section class="[ proyectos ]">
 		<div class="[ wrapper ]">
 			<h2 class="[ text-thin ]">Proyectos</h2>
-			<div class="[ row ][ text-center ]">
+			<div class="[ row ]">
 				<?php
 				if( empty( $_GET ) ){
 					show_all_projects();
@@ -21,13 +23,17 @@
 			</div>
 		</div>
 	</section><!-- proyectos -->
-	
+
+
+	<!-- =================================================
+	==== FILTROS
+	================================================== -->
 	<section class="[ filtros-proyectos ][ modal-wrapper modal-filtros ][ hide ]">
-		<div class="[ modal modal--full ][ diagonal-green-to-blue-gradient ]">
+		<div class="[ modal ][ diagonal-green-to-blue-gradient ]">
 			<div class="[ modal-content ][ wrapper ]">
-				<article>
-					<div class="[ row ][ padding--top ]">
-						<div class="[ xmall-6 ][ pull-right ][ hidden--large-inline ][ inline-block align-middle ]">
+				<article class="[ ]">
+					<div class="[ clearfix ][ padding--top ]">
+						<div class="[ pull-right ][ hidden--large-inline ][ inline-block align-middle ]">
 							<a class="[ block ][ pull-right ][ bg-transparent ][ js-modal-closer ]" data-modal="filtros" href="#">
 								<span class="[ block ][ no-padding ]">
 									<img class="[ svg icon icon--medium ][ color-intermediate ][ padding--small ]" src="<?php echo THEMEPATH; ?>images/close.svg" alt="menu">
@@ -110,6 +116,7 @@
 		</div>
 	</section>
 
-<?php endif; wp_reset_query(); ?>
-
-<?php get_footer(); ?>
+<?php
+endif;
+get_footer();
+?>

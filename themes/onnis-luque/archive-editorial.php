@@ -6,7 +6,7 @@
 <?php if( have_posts() ) : ?>
 	<section class="[ editorial ]">
 		<div class="[ wrapper ]">
-			<h2>Editorial</h2>
+			<h2 class="[ text-thin ]">Editorial</h2>
 			<div class="row">
 				<?php
 				while ( have_posts() ) : the_post();

@@ -21,6 +21,7 @@ function footer_scripts(){
 
 			imgToSvg();
 			toggleHeader();
+			setMainPaddingTop();
 
 			/**
 			 * Triggered events

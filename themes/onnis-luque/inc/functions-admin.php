@@ -101,16 +101,14 @@
 \*------------------------------------*/
 
 if ( function_exists('add_image_size') ){
-	// add_image_size( 'size_name', 200, 200, true );
+	add_image_size( 'single_editorial', 200, 260, true );
+	add_image_size( 'single_proyecto', 300, 300, false );
 
-	// cambiar el tamaño del thumbnail
+	// cambiar el tamaño y crop del thumbnail
 	/*
 	update_option( 'thumbnail_size_h', 100 );
 	update_option( 'thumbnail_size_w', 200 );
 	update_option( 'thumbnail_crop', false );
 	*/
-
-	//cambiar el crop del medium
-	update_option( 'medium_crop', true );
 
 }

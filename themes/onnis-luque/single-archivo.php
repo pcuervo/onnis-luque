@@ -40,15 +40,13 @@
 			if( has_shortcode( $content, 'gallery' ) ) {
 				$galleries = get_galleries_from_content($post);
 				foreach ($galleries as $gallery => $galleryIDs) {
-					$images = sga_gallery_images('medium', $galleryIDs); ?>
+					$images = sga_gallery_images('single_proyecto', $galleryIDs); ?>
 					<div class="[ row ]">
 						<?php foreach ($images as $key => $image) {
 							$imageID 	= $image[4];
 							$imageURL	= $image[0];
-							?>
-
-							<a class="[ column xmall-12 medium-6 ][ card ][ margin-bottom ][ bg-cover ]" style="background-image: url('<?php echo $imageURL; ?>')" href="#" data-number="<?php echo $key; ?>">
-							</a>
+						?>
+							<a class="[ column xmall-12 medium-6 ][ card ][ margin-bottom ][ bg-cover ]" style="background-image: url('<?php echo $imageURL; ?>')" href="#" data-number="<?php echo $key; ?>"></a>
 						<?php } ?>
 					</div><!-- row -->
 				<?php }
@@ -64,7 +62,7 @@
 <section class="[ modal-wrapper modal-archivo ][ hide ]">
 	<div class="[ modal modal--full ]">
 		<div class="[ xmall-12 ][ close-modal ][ clearfix ][ absolute z-index-6 ]">
-			<p class="[ text-center ]"><a class="[ block ][ padding ][[ bg-transparent ][ js-modal-closer ]" data-modal="contacto" href="#">
+			<p class="[ text-center ]"><a class="[ block ][ padding ][[ bg-transparent ][ js-gallery-toggler ]" data-modal="contacto" href="#">
 				Cerrar
 			</a></p>
 		</div>

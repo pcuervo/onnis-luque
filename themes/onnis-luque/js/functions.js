@@ -185,9 +185,7 @@ function getContactErrorHTML( message ){
 
 //Toggle Modal and run cycle
 function toggleModalGallery( imagenNumber ){
-	console.log(imagenNumber);
-	if ( $('.modal-archivo').hasClass('hide') ){
-
+	if ( $('.modal-archivo, .modal-editorial').hasClass('hide') ){
 		$('.slideshow').cycle({
 			slides 			: '.image-single',
 			fx 				: 'scrollHorz',
@@ -198,12 +196,12 @@ function toggleModalGallery( imagenNumber ){
 			log 			: true,
 			startingSlide 	: imagenNumber
 		});
-
+		console.log(imagenNumber);
 	} else {
 		destroyCycle();
 	}
 
-	$('.modal-archivo').toggleClass('hide');
+	$('.modal-archivo, .modal-editorial').toggleClass('hide');
 
 	$(document).on('keydown', function(e) {
 		//e.preventDefault();

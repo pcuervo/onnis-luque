@@ -20,9 +20,9 @@
 							<p><?php echo $lugar_taller; ?></p>
 							<p class="[ margin-bottom ]"><?php echo $fecha_taller; ?></p>
 							<p></p>
-							<div class="[ clearfix ]">
+							<!-- <div class="[ clearfix ]">
 								<a href="<?php echo get_permalink(); ?>" class="[ button button--primary ][ no-margin ][ pull-right ]">Mas información</a>
-							</div>
+							</div> -->
 						</div>
 
 					</div>

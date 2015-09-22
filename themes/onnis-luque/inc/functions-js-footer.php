@@ -109,6 +109,28 @@ function footer_scripts(){
 
 			<?php endif; ?>
 
+
+
+
+			/*------------------------------------*\
+				#SINGLE VIDEO
+			\*------------------------------------*/
+			<?php if( is_singular('videos') ) : ?>
+
+				/**
+				 * On load
+				**/
+				$('.video-container').fitVids();
+
+
+				/**
+				 * Triggered events
+				**/
+
+
+
+			<?php endif; ?>
+
 		</script>
 <?php
 	endif;

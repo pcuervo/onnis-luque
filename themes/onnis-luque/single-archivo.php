@@ -40,9 +40,7 @@
 			if( has_shortcode( $content, 'gallery' ) ) {
 				$galleries = get_galleries_from_content($post);
 				foreach ($galleries as $gallery => $galleryIDs) {
-
 					$images = sga_gallery_images('medium', $galleryIDs); ?>
-
 					<div class="[ row ]">
 						<?php foreach ($images as $key => $image) {
 							$imageID 	= $image[4];
@@ -58,6 +56,44 @@
 
 		</div><!-- .wrapper -->
 	</div>
+</section>
+
+<!-- =================================================
+==== MODAL ARCHIVO
+================================================== -->
+<section class="[ modal-wrapper modal-archivo ][ hide ]">
+	<div class="[ modal modal--full ]">
+		<div class="[ close-modal ]">
+			<a class="[ block ][ button--light button--hollow ][ pull-right ][ bg-transparent ][ js-gallery-toggler ]" data-modal="archivo" href="#">
+				<span class="[ block ][ no-padding ]">
+					<img class="[ svg icon icon--medium ][ padding--small ][ light ]" src="<?php echo THEMEPATH; ?>images/close.svg" alt="menu">
+				</span>
+			</a>
+		</div>
+		<div class="[ modal-content ][ wrapper ][ text-center ]">
+			<div class="[ slideshow ]">
+				<?php
+				$images = sga_gallery_images('full', $galleryIDs);
+
+				foreach ($images as $key => $image) {
+					$imageURL 	= $image[0]; ?>
+
+					<div class="[ image-single ]" data-number="<?php echo $key-1; ?>">
+						<div class="[ full-height ]">
+							<img class="[ full-height-centered ]" src="<?php echo $imageURL; ?>">
+						</div><!-- full-height -->
+					</div>
+
+				<?php } ?>
+				<div class="[ cycle-control cycle-prev ]">
+					Atras
+				</div><!-- cycle-prev  -->
+				<div class="[ cycle-control cycle-next ]">
+					Siguiente
+				</div><!-- cycle-next  -->
+			</div><!-- slideshow -->
+		</div>
+	</div><!-- modal-content -->
 </section>
 
 <?php get_footer(); ?>

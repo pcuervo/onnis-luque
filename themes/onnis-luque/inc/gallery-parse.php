@@ -110,22 +110,15 @@ function get_galleries_from_content($post) {
 	$content = $post->post_content;
 	$post_id = $post->ID;
 	$gallid = $post->ID;
-
 	$galleries = array();
 
 	$howmany = preg_match_all('/\[gallery(\s+columns="[^"]*")?(\s+link="[^"]*")?\s+ids="([^"]*)"\]/',$content,$arrmatches);
 	for ($gallid=0; $gallid<$howmany; $gallid++) {
-
 		$gall = '';	// Reset gallery buffer
-
 		$res = preg_match('/\s*columns="([0-9]+)"/',$arrmatches[1][$gallid],$arrcolmatch);
-
 		$ids = $arrmatches[3][$gallid]; // gallery images IDs are here now
 		$images = sga_gallery_images('full',$ids);
-
 		$galleries[] = $ids;
-
 	} // Foreach loop on galleries
-
 	return $galleries;
 }

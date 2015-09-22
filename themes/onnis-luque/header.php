@@ -65,7 +65,8 @@
 
 					<nav class="[ text-center ][ uppercase ]">
 						<a href="<?php echo site_url(); ?>" class="[ <?php echo is_home() ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Inicio</a>
-						<a href="<?php echo site_url('archivo'); ?>" class="[ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Archivo</a>
+						<a href="<?php echo site_url('archivo'); ?>" class="[ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Foto</a>
+						<a href="<?php echo site_url('videos'); ?>" class="[ <?php echo get_post_type() == 'videos' ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Video</a>
 						<a href="<?php echo site_url('talleres'); ?>" class="[ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Talleres</a>
 						<a href="<?php echo site_url('editorial'); ?>" class="[ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ][ button button--ink__intermediate ][ no-padding ][ xmall-12 ]">Editorial</a>
 					</nav><!-- categorias -->
@@ -138,7 +139,8 @@
 						<hr class="[ no-margin ][ divider divider--light ]">
 						<nav class="[ text-center ][ uppercase ]">
 							<a href="<?php echo site_url(); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo is_home() ? 'active' : ''; ?> ]">Inicio</a>
-							<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Archivo</a>
+							<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Foto</a>
+							<a href="<?php echo site_url('videos'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'videos' ? 'active' : ''; ?> ]">Video</a>
 							<a href="<?php echo site_url('talleres'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ]">Talleres</a>
 							<a href="<?php echo site_url('editorial'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ]">Editorial</a>
 						</nav>
@@ -159,7 +161,8 @@
 							</div><div class="[ xmall-8 ][ inline-block align-middle ]">
 								<nav class="[ text-right ][ uppercase ]">
 									<a href="<?php echo site_url(); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo is_home() ? 'active' : ''; ?> ]">Inicio</a>
-									<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Archivo</a>
+									<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Foto</a>
+									<a href="<?php echo site_url('videos'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'videos' ? 'active' : ''; ?> ]">Video</a>
 									<a href="<?php echo site_url('talleres'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ]">Talleres</a>
 									<a href="<?php echo site_url('editorial'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ]">Editorial</a>
 								</nav>
@@ -208,7 +211,8 @@
 							</div><div class="[ xmall-8 ][ inline-block align-middle ]">
 								<nav class="[ text-right ][ uppercase ]">
 									<a href="<?php echo site_url(); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo is_home() ? 'active' : ''; ?> ]">Inicio</a>
-									<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Archivo</a>
+									<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Foto</a>
+									<a href="<?php echo site_url('videos'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'videos' ? 'active' : ''; ?> ]">Video</a>
 									<a href="<?php echo site_url('talleres'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'talleres' ? 'active' : ''; ?> ]">Talleres</a>
 									<a href="<?php echo site_url('editorial'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'editorial' ? 'active' : ''; ?> ]">Editorial</a>
 								</nav>

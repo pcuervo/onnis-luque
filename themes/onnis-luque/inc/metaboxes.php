@@ -14,6 +14,7 @@ add_action('add_meta_boxes', function(){
 			break;
 		default:
 			add_metaboxes_talleres();
+			add_metaboxes_videos();
 	}// switch
 
 });
@@ -28,7 +29,7 @@ add_action('add_meta_boxes', function(){
 * Add metaboxes for page "Contacto"
 **/
 function add_metaboxes_contacto(){
-				
+
 	$meta = add_meta_box( 'telefono', 'Teléfono', 'metabox_telefono', 'page', 'advanced', 'high' );
 	add_meta_box( 'email', 'E-mail', 'metabox_email', 'page', 'advanced', 'high' );
 	add_meta_box( 'facebook', 'Facebook', 'metabox_facebook', 'page', 'advanced', 'high' );
@@ -45,6 +46,15 @@ function add_metaboxes_talleres(){
 	add_meta_box( 'fecha_taller', 'Fecha', 'metabox_fecha_taller', 'talleres', 'advanced', 'high' );
 
 }// add_metaboxes_talleres
+
+/**
+* Add metaboxes for post type "Videos"
+**/
+function add_metaboxes_videos(){
+
+	add_meta_box( 'url_video', 'Video', 'metabox_url_video', 'videos', 'advanced', 'high' );
+
+}// add_metaboxes_videos
 
 
 
@@ -127,6 +137,17 @@ function metabox_fecha_taller( $post ){
 
 }// metabox_fecha_taller
 
+/**
+* Display metabox url video in post type "Videos"
+* @param obj $post
+**/
+function metabox_url_video( $post ){
+
+	$url_video = get_post_meta($post->ID, '_url_video_meta', true);
+	wp_nonce_field(__FILE__, '_url_video_meta_nonce');
+	echo "<textarea class='[ widefat ]' name='_url_video_meta' cols='30' rows='10'>$url_video</textarea>";
+}// metabox_url_video
+
 
 /*------------------------------------*\
 	SAVE METABOXES DATA
@@ -136,7 +157,8 @@ add_action('save_post', function( $post_id ){
 
 	save_metabox_contacto( $post_id );
 	save_metabox_talleres( $post_id );
-	
+	save_metabox_videos( $post_id );
+
 });
 
 /**
@@ -144,7 +166,7 @@ add_action('save_post', function( $post_id ){
 * @param int $post_id
 **/
 function save_metabox_contacto( $post_id ){
-	
+
 	// Teléfono
 	if ( isset($_POST['_telefono_meta']) and check_admin_referer( __FILE__, '_telefono_meta_nonce') ){
 		update_post_meta($post_id, '_telefono_meta', $_POST['_telefono_meta']);
@@ -169,7 +191,7 @@ function save_metabox_contacto( $post_id ){
 * @param int $post_id
 **/
 function save_metabox_talleres( $post_id ){
-	
+
 	// Lugar taller
 	if ( isset($_POST['_lugar_taller_meta']) and check_admin_referer( __FILE__, '_lugar_taller_meta_nonce') ){
 		update_post_meta($post_id, '_lugar_taller_meta', $_POST['_lugar_taller_meta']);
@@ -180,4 +202,17 @@ function save_metabox_talleres( $post_id ){
 	}
 
 }// save_metabox_talleres
-	
+
+
+/**
+* Save the metaboxes for post type "Videos"
+* @param int $post_id
+**/
+function save_metabox_videos( $post_id ){
+
+	// URL video
+	if ( isset($_POST['_url_video_meta']) and check_admin_referer( __FILE__, '_url_video_meta_nonce') ){
+		update_post_meta($post_id, '_url_video_meta', $_POST['_url_video_meta']);
+	}
+
+}// save_metabox_videos

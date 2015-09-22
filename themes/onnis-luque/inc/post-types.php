@@ -69,7 +69,7 @@ add_action('init', function(){
 	// TALLERES
 	$labels = array(
 		'name'          => 'Talleres',
-		'singular_name' => 'Publicación',
+		'singular_name' => 'Taller',
 		'add_new'       => 'Nuevo taller',
 		'add_new_item'  => 'Nuevo taller',
 		'edit_item'     => 'Editar taller',
@@ -95,5 +95,35 @@ add_action('init', function(){
 		'supports'           => array( 'title', 'editor', 'thumbnail' )
 	);
 	register_post_type( 'talleres', $args );
+
+	// VIDEOS
+	$labels = array(
+		'name'          => 'Videos',
+		'singular_name' => 'Video',
+		'add_new'       => 'Nuevo video',
+		'add_new_item'  => 'Nuevo video',
+		'edit_item'     => 'Editar video',
+		'new_item'      => 'Nuevo video',
+		'all_items'     => 'Todos',
+		'view_item'     => 'Ver video',
+		'search_items'  => 'Buscar videos',
+		'not_found'     => 'No se encontró',
+		'menu_name'     => 'Videos'
+	);
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'videos' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 6,
+		'supports'           => array( 'title', 'editor', 'thumbnail' )
+	);
+	register_post_type( 'videos', $args );
 
 });

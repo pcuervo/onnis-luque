@@ -171,9 +171,12 @@ fieldset{
 }
 
 .form .button{
-	margin: 0; border-color: @primary;
+	height: 42px;
+	padding: 9px 10px; border-color: @dark; margin: 0;
 	line-height: 1.4;
-	background-color: @primary; color: @light;
+	background-color: @dark; color: @light;
+
+	position: relative; bottom: 3px;
 }
 
 .form .select > select,
@@ -191,11 +194,11 @@ fieldset{
 	background: @light;
 	position: relative;
 	vertical-align: top;
-	border: 1px solid @primary;
+	border: 1px solid @intermediate;
 	display: -moz-inline-stack;
 	display: inline-block;
 	*display: inline;
-	color:  @primary;
+	color:  @intermediate;
 	outline:none;
 	height: 42px;
 	width: 100%;
@@ -255,12 +258,9 @@ fieldset{
 }
 
 .form .select .arrow {
-	position: absolute;
-	top: 9px;
-	right: 5px;
-	width: 24px;
-	height: 24px;
-	color: @primary;
+	width: 24px; height: 24px;
+	position: absolute; top: 28px; right: 5px;
+	color: @dark;
 	pointer-events:none;
 	z-index:16;
 }
@@ -329,16 +329,16 @@ fieldset{
 .form .gui-input:focus,
 .form .gui-textarea:focus,
 .form .select > select:focus,
-.form .select-multiple select:focus{ border-color: @primary; color: @primary !important; }
+.form .select-multiple select:focus{ border-color: @intermediate; color: @intermediate !important; }
 .form .gui-textarea:focus{  height: 120px; }
 .form .select > select:focus { z-index:10; z-index:20\9; }
 .form .gui-input:focus ~ .field-icon i,
-.form .gui-textarea:focus ~ .field-icon i{ color:@primary; }
+.form .gui-textarea:focus ~ .field-icon i{ color:@intermediate; }
 .form .select-multiple select:focus,
 .form .gui-input:focus ~ .input-hint,
 .form .gui-textarea:focus ~ .input-hint,
-.form .file .gui-file:focus + .gui-input{ border-color: @primary; }
-.form .select > select:focus + .arrow{ color:@primary; }
+.form .file .gui-file:focus + .gui-input{ border-color: @intermediate; }
+.form .select > select:focus + .arrow{ color:@intermediate; }
 
 /* @radio + checkbox option elements
 ----------------------------------------------------- */

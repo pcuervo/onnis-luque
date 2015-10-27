@@ -38,7 +38,7 @@ add_action('init', function(){
 
 	// EDITORIAL
 	$labels = array(
-		'name'          => 'Publicaciones',
+		'name'          => 'Editorial',
 		'singular_name' => 'Publicación',
 		'add_new'       => 'Nueva publicación',
 		'add_new_item'  => 'Nueva publicación',
@@ -48,7 +48,7 @@ add_action('init', function(){
 		'view_item'     => 'Ver publicación',
 		'search_items'  => 'Buscar publiaciones',
 		'not_found'     => 'No se encontró',
-		'menu_name'     => 'Publicaciones'
+		'menu_name'     => 'Editorial'
 	);
 	$args = array(
 		'labels'             => $labels,

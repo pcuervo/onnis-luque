@@ -117,5 +117,7 @@ if( have_posts() ) : ?>
 
 <?php
 endif;
+
+wpex_pagination();
 get_footer();
 ?>

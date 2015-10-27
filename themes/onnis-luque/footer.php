@@ -15,10 +15,10 @@
 						</a>
 						<div class="[ xmall-12 ][ center ][ row ]">
 							<div class="[ column xmall-6 ]">
-								<p><small><strong>Teléfono: </strong><a href="tel:<?php echo get_telefono_contacto(); ?>"><?php echo get_telefono_contacto(); ?></a></small></p>
+								<p><strong>Teléfono: </strong><a href="tel:<?php echo get_telefono_contacto(); ?>"><?php echo get_telefono_contacto(); ?></a></p>
 							</div>
 							<div class="[ column xmall-6 ]">
-								<p><small><strong>Correo: </strong><a href="mailto:<?php echo get_email_contacto(); ?>"><?php echo get_email_contacto(); ?></a></small></p>
+								<p><strong>Correo: </strong><a href="mailto:<?php echo get_email_contacto(); ?>"><?php echo get_email_contacto(); ?></a></p>
 							</div>
 							<div class="[ column xmall-12 ]">
 								<p><small><strong>Onnis Luque, </strong>Architectural Photography <br> &copy; <?php echo date('Y'); ?> Todos los derechos reservados</small></p>

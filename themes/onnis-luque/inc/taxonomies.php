@@ -30,8 +30,7 @@ function custom_taxonomies_callback(){
 			'query_var'         => true,
 			'rewrite'           => array( 'slug' => 'ano' ),
 		);
-
-		register_taxonomy( 'ano', 'archivo', $args );
+		register_taxonomy( 'ano', array('archivo', 'videos'), $args );
 	}
 
 	// LUGAR
@@ -58,7 +57,7 @@ function custom_taxonomies_callback(){
 			'rewrite'           => array( 'slug' => 'lugar' ),
 		);
 
-		register_taxonomy( 'lugar', 'archivo', $args );
+		register_taxonomy( 'lugar', array('archivo', 'videos'), $args );
 	}
 
 	// ARQUITECTO / DESPACHO
@@ -85,7 +84,7 @@ function custom_taxonomies_callback(){
 			'rewrite'           => array( 'slug' => 'arquitecto-despacho' ),
 		);
 
-		register_taxonomy( 'arquitecto-despacho', 'archivo', $args );
+		register_taxonomy( 'arquitecto-despacho', array('archivo', 'videos'), $args );
 	}
 
 	// TIPOLOGÍA
@@ -112,7 +111,7 @@ function custom_taxonomies_callback(){
 			'rewrite'           => array( 'slug' => 'tipologia' ),
 		);
 
-		register_taxonomy( 'tipologia', 'archivo', $args );
+		register_taxonomy( 'tipologia', array('archivo', 'videos'), $args );
 	}
 
 }// custom_taxonomies_callback

@@ -341,6 +341,10 @@ function get_archive_filter_args( $ano, $arquitecto_despacho, $lugar, $tipologia
 
 
 
+require_once('inc/gallery-parse.php');
+
+
+
 /*------------------------------------*\
 	#AJAX FUNCTIONS
 \*------------------------------------*/
@@ -393,14 +397,3 @@ function send_email_contacto(){
 }// send_email_contacto
 add_action("wp_ajax_send_email_contacto", "send_email_contacto");
 add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
-
-
-
-
-
-
-
-
-
-
-

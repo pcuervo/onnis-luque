@@ -30,14 +30,63 @@
 
 	<div class="[ margin-bottom--large ][ single-content ]">
 		<div class="[ wrapper ]">
-			<div class="[ row ]">
-				<div class="[ columna small-12 medium-10 large-8 center ][ text-center ]">
-					<h3>Descripción</h3>
-					<?php the_content(); ?>
-				</div>
+			<div class="[ xmall-12 medium-10 large-8 center ][ text-center ]">
+				<h3>Descripción</h3>
+				<?php the_content(); ?>
 			</div>
+
+			<?php
+			$content = $post->post_content;
+			if( has_shortcode( $content, 'gallery' ) ) {
+				$galleries = get_galleries_from_content($post);
+				foreach ($galleries as $gallery => $galleryIDs) {
+					$images = sga_gallery_images('single_proyecto', $galleryIDs); ?>
+					<div class="[ row ]">
+						<?php foreach ($images as $key => $image) {
+							$imageID 	= $image[4];
+							$imageURL	= $image[0];
+						?>
+							<a class="[ column xmall-12 medium-6 ][ card ][ margin-bottom ][ bg-cover ]" style="background-image: url('<?php echo $imageURL; ?>')" href="#" data-number="<?php echo $key; ?>"></a>
+						<?php } ?>
+					</div><!-- row -->
+				<?php }
+			} ?>
+
 		</div><!-- .wrapper -->
 	</div>
+</section>
+
+<!-- =================================================
+==== MODAL ARCHIVO
+================================================== -->
+<section class="[ modal-wrapper modal-archivo ][ hide ]">
+	<div class="[ modal modal--full ]">
+		<div class="[ xmall-12 ][ close-modal ][ clearfix ][ absolute z-index-6 ]">
+			<p class="[ text-center ]"><a class="[ block ][ padding ][[ bg-transparent ][ js-gallery-toggler ]" data-modal="contacto" href="#">
+				Cerrar
+			</a></p>
+		</div>
+		<div class="[ modal-content ][ wrapper ][ text-center ]">
+			<div class="[ slideshow ]">
+				<?php
+				$images = sga_gallery_images('full', $galleryIDs);
+				$totalImages = count($images);
+
+				foreach ($images as $key => $image) {
+					$imageURL 	= $image[0];
+					?>
+
+					<div class="[ image-single ][ bg-light ]">
+						<p class="[ clearfix ][ cycle-info ][ text-center ]"><?php echo $key+1; ?>/<?php echo $totalImages; ?></p>
+						<img class="[ center block ]" src="<?php echo $imageURL; ?>">
+					</div>
+
+				<?php } ?>
+				<p class="[ span xmall-6 ][ inline-block align-middle ][ text-left ][ no-margin ][ cycle-control cycle-prev ]">Atras</p><p
+					class="[ span xmall-6 ][ inline-block align-middle ][ text-right ][ cycle-control cycle-next ]">Siguiente</p>
+			</div><!-- slideshow -->
+		</div>
+	</div><!-- modal-content -->
 </section>
 
 <?php get_footer(); ?>

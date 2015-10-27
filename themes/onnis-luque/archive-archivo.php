@@ -43,13 +43,13 @@ if( have_posts() ) : ?>
 					</div><!-- row -->
 				</article>
 
-				<form class="[ center-full ]" action="">
+				<form class="[ center-full ][ form ]" action="">
 					<div class="[ row ][ wrapper ]">
 						<h3>Filtros:</h3>
-						<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+						<fieldset class="[ column xmall-12 medium-6 ][ margin-bottom--large ]">
 							<label class="field select">
+								<span class="[ uppercase ]">Año</span>
 								<select class="[ column xmall-12 ]" name="ano">
-									<option value="">Año</option>
 									<?php $anos = get_terms_proyectos( 'ano' ); ?>
 									<?php foreach ( $anos as $key => $ano ) : ?>
 										<option value="<?php echo $key; ?>"><?php echo $ano; ?></option>
@@ -58,10 +58,10 @@ if( have_posts() ) : ?>
 								<i class="arrow"></i>
 							</label>
 						</fieldset>
-						<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+						<fieldset class="[ column xmall-12 medium-6 ][ margin-bottom--large ]">
 							<label class="field select">
+								<span class="[ uppercase ]">Arquitecto / Despacho</span>
 								<select class="[ column xmall-12 ]" name="arquitecto-despacho">
-									<option value="">Arquitecto / Despacho</option>
 									<?php $arquitectos_despachos = get_terms_proyectos( 'arquitecto-despacho' ); ?>
 									<?php foreach ( $arquitectos_despachos as $key => $arq_desp ) : ?>
 										<option value="<?php echo $key; ?>"><?php echo $arq_desp; ?></option>
@@ -70,10 +70,10 @@ if( have_posts() ) : ?>
 								<i class="arrow"></i>
 							</label>
 						</fieldset>
-						<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+						<fieldset class="[ column xmall-12 medium-6 ][ margin-bottom--large ]">
 							<label class="field select">
+								<span class="[ uppercase ]">Lugar</span>
 								<select class="[ column xmall-12 ]" name="lugar">
-									<option value="">Lugar</option>
 									<?php $lugares = get_terms_proyectos( 'lugar' ); ?>
 									<?php foreach ( $lugares as $key => $lugar ) : ?>
 										<option value="<?php echo $key; ?>"><?php echo $lugar; ?></option>
@@ -82,10 +82,10 @@ if( have_posts() ) : ?>
 								<i class="arrow"></i>
 							</label>
 						</fieldset>
-						<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+						<fieldset class="[ column xmall-12 medium-6 ][ margin-bottom--large ]">
 							<label class="field select">
+								<span class="[ uppercase ]">Tipología</span>
 								<select class="[ column xmall-12 ]" name="tipologia">
-									<option value="">Tipología</option>
 									<?php $tipologias = get_terms_proyectos( 'tipologia' ); ?>
 									<?php foreach ( $tipologias as $key => $tipologia ) : ?>
 										<option value="<?php echo $key; ?>"><?php echo $tipologia; ?></option>
@@ -94,10 +94,10 @@ if( have_posts() ) : ?>
 								<i class="arrow"></i>
 							</label>
 						</fieldset>
-						<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+						<fieldset class="[ column xmall-12 medium-6 ][ margin-bottom--large ]">
 							<label class="field select">
+								<span class="[ uppercase ]">Proyectos</span>
 								<select class="[ column xmall-12 ]" name="proyectos">
-									<option value="">Proyectos</option>
 									<?php $proyectos = get_proyectos(); ?>
 									<?php foreach ( $proyectos as $key => $proyecto ) : ?>
 										<option value="<?php echo $key; ?>"><?php echo $proyecto; ?></option>
@@ -106,9 +106,8 @@ if( have_posts() ) : ?>
 								<i class="arrow"></i>
 							</label>
 						</fieldset>
-						<fieldset class="[ margin-bottom ]">
-							<button type="submit" class="[ button button--primary ][ column xmall-12 ]">Filtrar</button>
-						</fieldset>
+						<span><small>&nbsp;</small></span>
+						<button type="submit" class="[ column xmall-12 medium-6 ][ margin-bottom--large ][ button button--dark ][ column xmall-12 ]">Filtrar</button>
 					</div>
 				</form>
 

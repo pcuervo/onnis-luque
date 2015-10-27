@@ -26,7 +26,7 @@ if( $archivo_query->have_posts() ) : ?>
 	<section class="[ archivo ][ margin-top-bottom--large ]">
 		<div class="[ wrapper ]">
 
-			<div class="[ row ][ large-10 center ]">
+			<div class="[ row ]">
 
 				<h2 class="[ uppercase ][ margin-bottom--small ][ text-thin ]">Proyectos <span class="[ text-bold ]" >Recientes</span></h2>
 				<?php

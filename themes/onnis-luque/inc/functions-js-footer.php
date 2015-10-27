@@ -80,7 +80,57 @@ function footer_scripts(){
 
 
 
-<?php  ?>
+			/*------------------------------------*\
+				#SINGLE ARCHIVO
+			\*------------------------------------*/
+			<?php if( is_singular('archivo') OR is_post_type_archive('editorial') ) : ?>
+
+				/**
+				 * On load
+				**/
+
+
+				/**
+				 * Triggered events
+				**/
+				$('.card, .js-editorial-cover').on('click', function(e){
+					e.preventDefault();
+					console.log('click');
+					var imagenNumber = $(this).data('number');
+					toggleModalGallery(imagenNumber);
+				});
+
+				$('.js-gallery-toggler').on('click', function(e){
+					e.preventDefault();
+					toggleModalGallery(0);
+				});
+
+
+
+			<?php endif; ?>
+
+
+
+
+			/*------------------------------------*\
+				#SINGLE VIDEO
+			\*------------------------------------*/
+			<?php if( is_singular('videos') ) : ?>
+
+				/**
+				 * On load
+				**/
+				$('.video-container').fitVids();
+
+
+				/**
+				 * Triggered events
+				**/
+
+
+
+			<?php endif; ?>
+
 		</script>
 <?php
 	endif;

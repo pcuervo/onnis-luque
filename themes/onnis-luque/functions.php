@@ -226,6 +226,36 @@ function get_email_contacto(){
 }// get_email_contacto
 
 /**
+ * Get "Facebook" from page "Información de contacto"
+ * @return string $facebook
+ */
+function get_facebook_contacto(){
+
+	$contact_info_query = new WP_Query( 'pagename=info-contacto' );
+	$contact_info_query->the_post();
+	$facebook = get_post_meta( get_the_ID(), '_facebook_meta', TRUE );
+	wp_reset_query();
+
+	return $facebook;
+
+}// get_facebook_contacto
+
+/**
+ * Get "Instragram" from page "Información de contacto"
+ * @return string $instagram
+ */
+function get_instagram_contacto(){
+
+	$contact_info_query = new WP_Query( 'pagename=info-contacto' );
+	$contact_info_query->the_post();
+	$instagram = get_post_meta( get_the_ID(), '_instagram_meta', TRUE );
+	wp_reset_query();
+
+	return $instagram;
+
+}// get_instagram_contacto
+
+/**
  * Get taxonomy terms from post type "Proyectos"
  * @param string $taxonomy
  * @return array $terms
@@ -319,8 +349,8 @@ function get_html_project( $permalink, $image, $title, $lugar, $ano ){
 	<a class="[ full-height ][ block ][ relative ]" href="<?php echo $permalink ?>">
 		<article class="[ column xmall-12 medium-6 large-4 ][ card ][ color-light ][ relative ][ margin-bottom ]">
 			<img class="[ card__image ][ center-full ]" src="<?php echo $image ?>" alt="">
-			<div class="[ card__info ][ xmall-12 ][ z-index-1 ]">
-				<h3 class="[ no-margin ]"><?php echo $title; ?></h3>
+			<div class="[ card__info ][ xmall-1z2 ][ z-index-1 ]">
+				<h3 class="[ no-margin ]"><?php echo format_title( $title ); ?></h3>
 				<p><?php echo $lugar . '. ' . $ano; ?></p>
 			</div>
 		</article>

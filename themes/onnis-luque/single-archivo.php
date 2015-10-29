@@ -41,12 +41,14 @@
 				$galleries = get_galleries_from_content($post);
 				foreach ($galleries as $gallery => $galleryIDs) {
 					$images = sga_gallery_images('single_proyecto', $galleryIDs); ?>
-					<div class="[ row ]">
+					<div class="[ row ][ margin-top ]">
 						<?php foreach ($images as $key => $image) {
 							$imageID 	= $image[4];
 							$imageURL	= $image[0];
 						?>
-							<a class="[ column xmall-12 medium-6 ][ card ][ margin-bottom ][ bg-cover ]" style="background-image: url('<?php echo $imageURL; ?>')" href="#" data-number="<?php echo $key; ?>"></a>
+							<a class="[ column xmall-6 medium-4 large-3 ][ margin-bottom ]" href="#" data-number="<?php echo $key; ?>">
+								<img class="[ image-responsive ]" src="<?php echo $imageURL; ?>" alt="" />
+							</a>
 						<?php } ?>
 					</div><!-- row -->
 				<?php }

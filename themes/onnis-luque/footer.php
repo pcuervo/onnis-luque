@@ -3,12 +3,11 @@
 				<div class="[ wrapper ]">
 
 					<section class="[ footer-links ][ text-center ]">
-						<a class="[ bg-transparent ][ decoration-none ]" href="#">
+						<a class="[ bg-transparent ][ decoration-none ]" href="<?php echo get_instagram_contacto(); ?>" target="_blank">
 							<span class="[ no-padding ]">
 								<img class="[ svg icon icon--medium ][ padding--small ][ color-intermediate ]" src="<?php echo THEMEPATH; ?>images/instagram.svg" alt="menu">
 							</span>
-						</a>
-						<a class="[ bg-transparent ][ decoration-none ]" href="#">
+						</a><a class="[ bg-transparent ][ decoration-none ]" href="<?php echo get_facebook_contacto(); ?>" target="_blank">
 							<span class="[ no-padding ]">
 								<img class="[ svg icon icon--medium ][ padding--small ][ color-intermediate ]" src="<?php echo THEMEPATH; ?>images/facebook.svg" alt="menu">
 							</span>

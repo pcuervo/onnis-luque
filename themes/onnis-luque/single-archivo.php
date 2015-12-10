@@ -41,14 +41,18 @@
 				$galleries = get_galleries_from_content($post);
 				foreach ($galleries as $gallery => $galleryIDs) {
 					$images = sga_gallery_images('single_proyecto', $galleryIDs); ?>
-					<div class="[ row ]">
+					<section class="[ row ][ js-packery ]">
 						<?php foreach ($images as $key => $image) {
 							$imageID 	= $image[4];
 							$imageURL	= $image[0];
 						?>
-							<a class="[ column xmall-12 medium-6 ][ card ][ margin-bottom ][ bg-cover ]" style="background-image: url('<?php echo $imageURL; ?>')" href="#" data-number="<?php echo $key; ?>"></a>
+							<article class="[ margin-bottom ][ column xmall-12 small-6 medium-4 large-3 ]">
+								<a class="[ block ][ js-gallery-item ]" href="#" data-number="<?php echo $key; ?>">
+									<img class="[ image-responsive ]" src="<?php echo $imageURL; ?>">
+								</a>
+							</article>
 						<?php } ?>
-					</div><!-- row -->
+					</section><!-- row -->
 				<?php }
 			} ?>
 
@@ -61,10 +65,17 @@
 ================================================== -->
 <section class="[ modal-wrapper modal-archivo ][ hide ]">
 	<div class="[ modal modal--full ]">
-		<div class="[ xmall-12 ][ close-modal ][ clearfix ][ absolute z-index-6 ]">
-			<p class="[ text-center ]"><a class="[ block ][ padding ][[ bg-transparent ][ js-gallery-toggler ]" data-modal="contacto" href="#">
-				Cerrar
-			</a></p>
+		<div class="[ xmall-12 ][ close-modal ][ clearfix ][ absolute z-index-6 ][ color-intermediate ]">
+			<div class="[ row ]">
+				<p class="[ span xmall-4 ][ text-left ][ padding no-margin ][ cycle-control cycle-prev ]"><</p>
+				<p class="[ span xmall-4 ][ text-center ][ no-margin ]">
+					<a class="[ block ][ padding ][ bg-transparent ][ js-gallery-toggler ]" data-modal="contacto" href="#">
+						Cerrar
+					</a>
+				</p>
+				<p class="[ span xmall-4 ][ text-right ][ padding no-margin ][ cycle-control cycle-next ]">></p>
+			</div>
+
 		</div>
 		<div class="[ modal-content ][ wrapper ][ text-center ]">
 			<div class="[ slideshow ]">
@@ -76,14 +87,12 @@
 					$imageURL 	= $image[0];
 					?>
 
-					<div class="[ image-single ][ bg-light ]">
-						<p class="[ clearfix ][ cycle-info ][ text-center ]"><?php echo $key+1; ?>/<?php echo $totalImages; ?></p>
+					<div class="[ image-single ][ bg-light color-intermediate ]">
+						<p class="[ text-center ][ no-margin ][ cycle-info ]"><?php echo $key+1; ?>/<?php echo $totalImages; ?></p>
 						<img class="[ center block ]" src="<?php echo $imageURL; ?>">
 					</div>
 
 				<?php } ?>
-				<p class="[ span xmall-6 ][ inline-block align-middle ][ text-left ][ no-margin ][ cycle-control cycle-prev ]">Atras</p><p
-					class="[ span xmall-6 ][ inline-block align-middle ][ text-right ][ cycle-control cycle-next ]">Siguiente</p>
 			</div><!-- slideshow -->
 		</div>
 	</div><!-- modal-content -->

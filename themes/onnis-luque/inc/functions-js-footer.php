@@ -88,14 +88,20 @@ function footer_scripts(){
 				/**
 				 * On load
 				**/
-
+				var $container = $('.js-packery').imagesLoaded( function() {
+					$container.packery({
+						"itemSelector": "article",
+						"gutter": 0,
+						"columnWidth": "article",
+						"percentPosition": true
+					});
+				});
 
 				/**
 				 * Triggered events
 				**/
-				$('.card, .js-editorial-cover').on('click', function(e){
+				$('.js-gallery-item, .js-editorial-cover').on('click', function(e){
 					e.preventDefault();
-					console.log('click');
 					var imagenNumber = $(this).data('number');
 					toggleModalGallery(imagenNumber);
 				});

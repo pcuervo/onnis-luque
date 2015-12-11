@@ -40,7 +40,7 @@ if( $archivo_query->have_posts() ) : ?>
 						<article class="[ column xmall-12 medium-6 large-4 ][ card ][ color-light ][ relative ][ margin-bottom ]">
 							<img class="[ card__image ][ center-full ]" src="<?php echo $image[0] ?>" alt="">
 							<div class="[ card__info ][ xmall-12 ][ z-index-1 ]">
-								<h3 class="[ no-margin ]"><?php echo get_the_title(); ?></h3>
+								<h3 class="[ no-margin ]"><?php echo format_title( get_the_title() ); ?></h3>
 								<p class="[ text-thin ]"><?php echo $lugar . '. ' . $ano; ?></p>
 							</div>
 						</article>

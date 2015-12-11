@@ -136,6 +136,21 @@ function print_title(){
 
 }// print_title
 
+/**
+ * Formats title to display only 30 characters
+ * replacing the last 3 with '...'
+ * @param string $title
+ * @return string $formatted_title
+ */
+function format_title( $title ){
+
+	if( 34 > strlen( $title ) ) return $title; 
+
+	$formatted_title = substr( $title, 0, 34 );
+	return $formatted_title . '...';
+
+}// format_title
+
 
 
 
@@ -143,7 +158,38 @@ function print_title(){
 	#FORMAT FUNCTIONS
 \*------------------------------------*/
 
-
+// Numbered Pagination
+if ( !function_exists( 'wpex_pagination' ) ) {
+	
+	function wpex_pagination() {
+		
+		$prev_arrow = is_rtl() ? '&rarr;' : '&larr;';
+		$next_arrow = is_rtl() ? '&larr;' : '&rarr;';
+		
+		global $wp_query;
+		$total = $wp_query->max_num_pages;
+		$big = 999999999; // need an unlikely integer
+		if( $total > 1 )  {
+			 if( !$current_page = get_query_var('paged') )
+				 $current_page = 1;
+			 if( get_option('permalink_structure') ) {
+				 $format = 'page/%#%/';
+			 } else {
+				 $format = '&paged=%#%';
+			 }
+			echo paginate_links(array(
+				'base'			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format'		=> $format,
+				'current'		=> max( 1, get_query_var('paged') ),
+				'total' 		=> $total,
+				'mid_size'		=> 3,
+				'type' 			=> 'list',
+				'prev_text'		=> $prev_arrow,
+				'next_text'		=> $next_arrow,
+			 ) );
+		}
+	}// wpex_pagination
+}// if
 
 /*------------------------------------*\
 	#SET/GET FUNCTIONS
@@ -178,6 +224,36 @@ function get_email_contacto(){
 	return $email;
 
 }// get_email_contacto
+
+/**
+ * Get "Facebook" from page "Información de contacto"
+ * @return string $facebook
+ */
+function get_facebook_contacto(){
+
+	$contact_info_query = new WP_Query( 'pagename=info-contacto' );
+	$contact_info_query->the_post();
+	$facebook = get_post_meta( get_the_ID(), '_facebook_meta', TRUE );
+	wp_reset_query();
+
+	return $facebook;
+
+}// get_facebook_contacto
+
+/**
+ * Get "Instragram" from page "Información de contacto"
+ * @return string $instagram
+ */
+function get_instagram_contacto(){
+
+	$contact_info_query = new WP_Query( 'pagename=info-contacto' );
+	$contact_info_query->the_post();
+	$instagram = get_post_meta( get_the_ID(), '_instagram_meta', TRUE );
+	wp_reset_query();
+
+	return $instagram;
+
+}// get_instagram_contacto
 
 /**
  * Get taxonomy terms from post type "Proyectos"
@@ -273,8 +349,8 @@ function get_html_project( $permalink, $image, $title, $lugar, $ano ){
 	<a class="[ full-height ][ block ][ relative ]" href="<?php echo $permalink ?>">
 		<article class="[ column xmall-12 medium-6 large-4 ][ card ][ color-light ][ relative ][ margin-bottom ]">
 			<img class="[ card__image ][ center-full ]" src="<?php echo $image ?>" alt="">
-			<div class="[ card__info ][ xmall-12 ][ z-index-1 ]">
-				<h3 class="[ no-margin ]"><?php echo $title; ?></h3>
+			<div class="[ card__info ][ xmall-1z2 ][ z-index-1 ]">
+				<h3 class="[ no-margin ]"><?php echo format_title( $title ); ?></h3>
 				<p><?php echo $lugar . '. ' . $ano; ?></p>
 			</div>
 		</article>

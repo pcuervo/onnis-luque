@@ -17,7 +17,7 @@
 		<div class="[ opacity-gradient--bottom-top ][ z-index-2 ]"></div>
 		<div class="[ center-full ][ z-index-3 ][ xmall-12 ][ text-center color-light ]">
 			<div class="[ wrapper ]">
-				<h1 class="[  ][ no-margin ]"><?php the_title(); ?></h1>
+				<h1 class="[  ][ no-margin ]"><?php echo get_the_title(); ?></h1>
 				<h2 class="[  ]"><small><?php echo $autor ?></small></h2>
 			</div>
 		</div>
@@ -93,5 +93,6 @@
 		</div>
 	</div><!-- modal-content -->
 </section>
+
 
 <?php get_footer(); ?>

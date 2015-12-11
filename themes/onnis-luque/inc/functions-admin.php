@@ -102,7 +102,7 @@
 
 if ( function_exists('add_image_size') ){
 	add_image_size( 'single_editorial', 200, 260, true );
-	add_image_size( 'single_proyecto', 300, 300, false );
+	add_image_size( 'single_proyecto', 700, 700, false );
 
 	// cambiar el tamaño y crop del thumbnail
 	/*

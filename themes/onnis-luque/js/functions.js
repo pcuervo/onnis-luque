@@ -81,7 +81,6 @@ function toggleMenu(element){
 	$(element).toggleClass('hide');
 
 	var menuHeight = getMenuHeight();
-	console.log(menuHeight);
 	$('header').not('header.scrolled').css('top:', menuHeight);
 }//openModal
 
@@ -251,6 +250,3 @@ function sendContactEmail( form ){
 	);
 
 }// sendContactEmail
-
-
-

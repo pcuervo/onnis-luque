@@ -93,7 +93,7 @@ function footer_scripts(){
 				/**
 				 * Triggered events
 				**/
-				$('.card, .js-editorial-cover').on('click', function(e){
+				$('.card, .js-editorial-cover, .gallery-item').on('click', function(e){
 					e.preventDefault();
 					console.log('click');
 					var imagenNumber = $(this).data('number');
@@ -101,6 +101,7 @@ function footer_scripts(){
 				});
 
 				$('.js-gallery-toggler').on('click', function(e){
+
 					e.preventDefault();
 					toggleModalGallery(0);
 				});

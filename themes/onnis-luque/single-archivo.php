@@ -46,7 +46,7 @@
 							$imageID 	= $image[4];
 							$imageURL	= $image[0];
 						?>
-							<a class="[ column xmall-6 medium-4 large-3 ][ margin-bottom ]" href="#" data-number="<?php echo $key; ?>">
+							<a class="[ column xmall-6 medium-4 large-3 ][ margin-bottom ][ gallery-item ]" href="#" data-number="<?php echo $key; ?>">
 								<img class="[ image-responsive ]" src="<?php echo $imageURL; ?>" alt="" />
 							</a>
 						<?php } ?>

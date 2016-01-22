@@ -13,8 +13,8 @@
 }
 
 .cycle-control{
-	width: 100%;
-	position: absolute; bottom: 10px;
+	font-size: 26px; line-height: 26px; font-weight: 300;
+	position: relative;
 	z-index: 600;
 	cursor: pointer;
 }
@@ -24,4 +24,16 @@
 
 .cycle-info{
 	//position: absolute; top: 10px;
+}
+
+/* In your CSS */
+.js-gallery{
+    /* define how much padding you want in between your images */
+    padding:10px;
+}
+
+.js-gallery img{
+    vertical-align:bottom;
+    opacity:0;
+    cursor: pointer;
 }

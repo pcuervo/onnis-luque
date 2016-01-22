@@ -12,6 +12,48 @@ function footer_scripts(){
 		<script type="text/javascript">
 
 			/*------------------------------------*\
+				#SINGLE ARCHIVO
+			\*------------------------------------*/
+			<?php if( is_singular('archivo') OR is_post_type_archive('editorial') ) : ?>
+
+				/**
+				 * On load
+				**/
+				$('.js-gallery').imagesLoaded( function() {
+					$('.js-gallery').removeWhitespace().collagePlus(
+						{
+							'allowPartialLastRow' : false
+						}
+					);
+				});
+
+				/**
+				 * Triggered events
+				**/
+				$('.js-gallery-item, .js-editorial-cover').on('click', function(e){
+					e.preventDefault();
+					var imagenNumber = $(this).data('number');
+					toggleModalGallery(imagenNumber);
+				});
+
+				$('.js-gallery-toggler').on('click', function(e){
+					e.preventDefault();
+					toggleModalGallery(0);
+				});
+
+				$( window ).resize(function() {
+					$('.js-gallery').collagePlus(
+						{
+							'allowPartialLastRow' : false
+						}
+					);
+				});
+
+
+
+			<?php endif; ?>
+
+			/*------------------------------------*\
 				#GLOBAL
 			\*------------------------------------*/
 
@@ -79,7 +121,6 @@ function footer_scripts(){
 			<?php endif; ?>
 
 
-
 			/*------------------------------------*\
 				#SINGLE ARCHIVO
 			\*------------------------------------*/
@@ -109,7 +150,6 @@ function footer_scripts(){
 
 
 			<?php endif; ?>
-
 
 
 

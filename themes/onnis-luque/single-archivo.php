@@ -46,9 +46,7 @@
 							$imageID 	= $image[4];
 							$imageURL	= $image[0];
 						?>
-
 							<img class="[ js-gallery-item ]" data-number="<?php echo $key; ?>" src="<?php echo $imageURL; ?>">
-
 						<?php } ?>
 					</section><!-- row -->
 				<?php }

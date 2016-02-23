@@ -208,7 +208,8 @@
 										<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-horizontal.svg" class="[ svg ][ icon icon--xlarge ][ color-intermediate ]">
 									</a>
 								</div>
-							</div><div class="[ xmall-8 ][ inline-block align-middle ]">
+							</div>
+							<div class="[ xmall-8 ][ inline-block align-middle ]">
 								<nav class="[ text-right ][ uppercase ]">
 									<a href="<?php echo site_url(); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo is_home() ? 'active' : ''; ?> ]">Inicio</a>
 									<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Foto</a>

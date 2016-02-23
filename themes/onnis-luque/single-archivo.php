@@ -31,7 +31,6 @@
 	<div class="[ margin-bottom--large ][ single-content ]">
 		<div class="[ wrapper ]">
 			<div class="[ xmall-12 medium-10 large-8 center ][ text-center ]">
-				<h3>Descripción</h3>
 				<?php the_content(); ?>
 			</div>
 
@@ -65,7 +64,7 @@
 <section class="[ modal-wrapper modal-archivo ][ hide ]">
 	<div class="[ modal modal--full ]">
 		<div class="[ xmall-12 ][ close-modal ][ clearfix ][ absolute z-index-6 ][ color-intermediate ]">
-			<div class="[ row ]">
+			<div class="[ row controls ]">
 				<p class="[ span xmall-4 ][ text-left ][ padding no-margin ][ cycle-control cycle-prev ]"><</p>
 				<p class="[ span xmall-4 ][ text-center ][ no-margin ]">
 					<a class="[ block ][ padding ][ bg-transparent ][ js-gallery-toggler ]" data-modal="contacto" href="#">

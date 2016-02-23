@@ -70,11 +70,10 @@ function show_all_projects(){
 	global $post;
 
 	while ( have_posts() ) : the_post();
-		$lugar = get_lugar_proyecto( $post->ID );
-		$ano = get_ano_proyecto( $post->ID );
+		$autor = get_autor_proyecto( $post->ID );
 		$permalink = get_permalink( $post->ID );
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-		get_html_project( $permalink, $image[0], get_the_title(), $lugar, $ano );
+		get_html_project( $permalink, $image[0], get_the_title(), $autor );
 	endwhile; wp_reset_query();
 
 }// show_all_projects
@@ -103,11 +102,10 @@ function show_filtered_projects( $filters ){
 
 	$query = new WP_Query( $args );
 	while ( $query->have_posts() ) : $query->the_post();
-		$lugar = get_lugar_proyecto( $post->ID );
-		$ano = get_ano_proyecto( $post->ID );
+		$autor = get_autor_proyecto( $post->ID );
 		$permalink = get_permalink( $post->ID );
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-		get_html_project( $permalink, $image[0], get_the_title(), $lugar, $ano );
+		get_html_project( $permalink, $image[0], get_the_title(), $autor );
 	endwhile; wp_reset_query();
 
 }// show_filtered_projects
@@ -344,14 +342,14 @@ function get_ano_proyecto( $post_id ){
  * @param string $lugar
  * @param string $ano
  */
-function get_html_project( $permalink, $image, $title, $lugar, $ano ){
+function get_html_project( $permalink, $image, $title, $autor ){
 	?>
 	<a class="[ full-height ][ block ][ relative ]" href="<?php echo $permalink ?>">
 		<article class="[ column xmall-12 medium-6 large-4 ][ card ][ color-light ][ relative ][ margin-bottom ]">
 			<img class="[ card__image ][ center-full ]" src="<?php echo $image ?>" alt="">
 			<div class="[ card__info ][ xmall-1z2 ][ z-index-1 ]">
 				<h3 class="[ no-margin ]"><?php echo format_title( $title ); ?></h3>
-				<p><?php echo $lugar . '. ' . $ano; ?></p>
+				<p><?php echo $autor; ?></p>
 			</div>
 		</article>
 	</a>

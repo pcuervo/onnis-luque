@@ -274,3 +274,9 @@ if (document.getElementById("filters_h")) {
 	});
 	
 }
+
+if (document.getElementById("single_video")) {
+
+	$('#single_video div iframe').attr('with', '200');
+
+}

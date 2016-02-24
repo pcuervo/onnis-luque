@@ -93,6 +93,15 @@
 		</div>
 	</div><!-- modal-content -->
 </section>
+<?php $prev_post = get_previous_post();
+$next_post = get_next_post();
 
+if ($prev_post) : ?>
+	<a href="<?php echo get_permalink( $prev_post->ID ); ?>"><img class="[ span ][ text-left ][ padding ][ cycle-control cycle-next ]" src="<?php echo THEMEPATH; ?>images/next.png"></a>
+<?php endif;
 
-<?php get_footer(); ?>
+if ($next_post) : ?>
+	<a href="<?php echo get_permalink( $next_post->ID ); ?>"><img class="[ span ][ text-left ][ padding ][ cycle-control cycle-prev ]" src="<?php echo THEMEPATH; ?>images/prev.png"></a>
+<?php endif;
+
+get_footer(); ?>

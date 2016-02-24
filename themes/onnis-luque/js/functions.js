@@ -250,3 +250,27 @@ function sendContactEmail( form ){
 	);
 
 }// sendContactEmail
+
+if (document.getElementById("filters_h")) {
+	
+	
+	$( "#filters_h select" ).change(function() {
+	   	var str = site_url+"/archivo/?";
+	   	$( "#filters_h select option:selected" ).each(function() {
+	   		var count = 1;
+	   	 	var value = $( this ).attr('value');
+	   	 	var variable = $( this ).data('variable');
+	   	 	str += variable+'='+value;
+	   	 	if (count < 5) {
+	   	 		str += '&';
+	   	 	};
+	   	 	count = 1 + count;
+	   	 	
+	   	 	
+	   	});
+	   	
+	   	window.location = str;
+	   	
+	});
+	
+}

@@ -49,7 +49,7 @@ $ano_c = isset($_GET['ano']) ? $_GET['ano'] : ''; ?>
 	</select>
 
 
-	<a class="[ button button--primary button--rounded-bottom ][ no-margin ][ js-modal-opener ]" href="#" data-modal="filtros" >Filtrar proyectos</a>
+	<a class="[ button button--primary button--rounded-bottom ][ no-margin ][ js-modal-opener hidden--large ] [ shown--medium ]" href="#" data-modal="filtros" >Filtrar proyectos</a>
 	
 </div>
 

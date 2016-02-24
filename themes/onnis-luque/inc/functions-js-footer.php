@@ -34,11 +34,13 @@ function footer_scripts(){
 					e.preventDefault();
 					var imagenNumber = $(this).data('number');
 					toggleModalGallery(imagenNumber);
+					$('body').css({'overflow': 'hidden'});
 				});
 
 				$('.js-gallery-toggler').on('click', function(e){
 					e.preventDefault();
 					toggleModalGallery(0);
+
 				});
 
 				$( window ).resize(function() {
@@ -142,9 +144,9 @@ function footer_scripts(){
 				});
 
 				$('.js-gallery-toggler').on('click', function(e){
-
 					e.preventDefault();
 					toggleModalGallery(0);
+					$('body').attr('style', '');
 				});
 
 

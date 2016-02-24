@@ -63,13 +63,13 @@
 	<div class="[ modal modal--full ]">
 		<div class="[ xmall-12 ][ close-modal ][ clearfix ][ absolute z-index-6 ][ color-intermediate ]">
 			<div class="[ row controls ]">
-				<p class="[ span xmall-4 ][ text-left ][ padding no-margin ][ cycle-control cycle-prev ]"><</p>
-				<p class="[ span xmall-4 ][ text-center ][ no-margin ]">
+				<img class="[ span ][ text-left ][ padding ][ cycle-control cycle-prev ]" src="<?php echo THEMEPATH; ?>images/prev.png">
+				<p class="[ span xmall-12 ][ text-center ][ no-margin ]">
 					<a class="[ block ][ padding ][ bg-transparent ][ js-gallery-toggler ]" data-modal="contacto" href="#">
 						Cerrar
 					</a>
 				</p>
-				<p class="[ span xmall-4 ][ text-right ][ padding no-margin ][ cycle-control cycle-next ]">></p>
+				<img class="[ span ][ padding ][ cycle-control cycle-next ]" src="<?php echo THEMEPATH; ?>images/next.png">
 			</div>
 
 		</div>

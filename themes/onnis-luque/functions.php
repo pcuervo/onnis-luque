@@ -25,7 +25,7 @@
 	require_once('inc/users.php');
 	require_once('inc/functions-admin.php');
 	require_once('inc/functions-js-footer.php');
-	include 'inc/extra-metaboxes.php';
+	require_once('inc/extra-metaboxes.php');
 
 
 

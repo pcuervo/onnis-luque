@@ -185,6 +185,8 @@ function getContactErrorHTML( message ){
 //Toggle Modal and run cycle
 function toggleModalGallery( imagenNumber ){
 	if ( $('.modal-archivo, .modal-editorial').hasClass('hide') ){
+		
+		$('.modal-archivo, .modal-editorial').removeClass('hide');
 		$('.slideshow').cycle({
 			slides 			: '.image-single',
 			fx 				: 'scrollHorz',
@@ -199,9 +201,10 @@ function toggleModalGallery( imagenNumber ){
 		});
 	} else {
 		destroyCycle();
+		$('.modal-archivo, .modal-editorial').addClass('hide');
 	}
 
-	$('.modal-archivo, .modal-editorial').toggleClass('hide');
+	// $('.modal-archivo, .modal-editorial').toggleClass('hide');
 }
 
 function destroyCycle(){

@@ -37,11 +37,6 @@ function footer_scripts(){
 					$('body').css({'overflow': 'hidden'});
 				});
 
-				$('.js-gallery-toggler').on('click', function(e){
-					e.preventDefault();
-					toggleModalGallery(0);
-
-				});
 
 				$( window ).resize(function() {
 					$('.js-gallery').collagePlus(

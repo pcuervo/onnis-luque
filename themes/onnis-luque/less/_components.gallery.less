@@ -19,8 +19,24 @@
 	cursor: pointer;
 }
 
-.cycle-prev{ left: 0; }
-.cycle-next{ right: 0; }
+.modal-wrapper.hide .cycle-prev, .modal-wrapper.hide .cycle-next{top: -82px; transition: 0.5s all;}
+
+.cycle-prev{ 
+	position: fixed;
+    left: 0;
+    width: 81px;
+    top: 50%;
+    margin-top: -64px; 
+    transition: 0.5s all;
+}
+.cycle-next{ 
+	position: fixed;
+    right: 0;
+    width: 81px;
+    top: 50%;
+    margin-top: -64px; 
+    transition: 0.5s all;
+}
 
 .cycle-info{
 	//position: absolute; top: 10px;

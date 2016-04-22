@@ -31,12 +31,12 @@
 	<div class="[ margin-bottom--large ][ single-content ]">
 		<div class="[ wrapper ]">
 			<div class="[ xmall-12 medium-10 large-8 center ][ text-center ]">
-				<h3>Descripción</h3>
 				<?php the_content(); ?>
 			</div>
 
 			<?php
 			$content = $post->post_content;
+
 			if( has_shortcode( $content, 'gallery' ) ) {
 				$galleries = get_galleries_from_content($post);
 				foreach ($galleries as $gallery => $galleryIDs) {
@@ -62,14 +62,14 @@
 <section class="[ modal-wrapper modal-archivo ][ hide ]">
 	<div class="[ modal modal--full ]">
 		<div class="[ xmall-12 ][ close-modal ][ clearfix ][ absolute z-index-6 ][ color-intermediate ]">
-			<div class="[ row ]">
-				<p class="[ span xmall-4 ][ text-left ][ padding no-margin ][ cycle-control cycle-prev ]"><</p>
-				<p class="[ span xmall-4 ][ text-center ][ no-margin ]">
+			<div class="[ row controls ]">
+				<img class="[ span ][ text-left ][ padding ][ cycle-control cycle-prev ]" src="<?php echo THEMEPATH; ?>images/prev.png">
+				<p class="[ span xmall-12 ][ text-center ][ no-margin ]">
 					<a class="[ block ][ padding ][ bg-transparent ][ js-gallery-toggler ]" data-modal="contacto" href="#">
 						Cerrar
 					</a>
 				</p>
-				<p class="[ span xmall-4 ][ text-right ][ padding no-margin ][ cycle-control cycle-next ]">></p>
+				<img class="[ span ][ padding ][ cycle-control cycle-next ]" src="<?php echo THEMEPATH; ?>images/next.png">
 			</div>
 
 		</div>
@@ -93,6 +93,15 @@
 		</div>
 	</div><!-- modal-content -->
 </section>
+<?php $prev_post = get_previous_post();
+$next_post = get_next_post();
 
+if ($prev_post) : ?>
+	<a href="<?php echo get_permalink( $prev_post->ID ); ?>"><img class="[ span ][ text-left ][ padding ][ cycle-control cycle-next ]" src="<?php echo THEMEPATH; ?>images/next.png"></a>
+<?php endif;
 
-<?php get_footer(); ?>
+if ($next_post) : ?>
+	<a href="<?php echo get_permalink( $next_post->ID ); ?>"><img class="[ span ][ text-left ][ padding ][ cycle-control cycle-prev ]" src="<?php echo THEMEPATH; ?>images/prev.png"></a>
+<?php endif;
+
+get_footer(); ?>

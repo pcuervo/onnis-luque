@@ -13,16 +13,26 @@
 			<?php echo $video_url; ?>
 		</div>
 		<div class="[ text-center ][ margin-bottom--large ]">
-			<h1 class="[  ][ no-margin ]"><?php the_title(); ?></h1>
-			<h2 class="[ no-margin ]"><small><?php echo $autor ?></small></h2>
+			<h2 class="[  ][ no-margin ]"><?php the_title(); ?></h2>
+			<h3 class="[ no-margin ]"><small><?php echo $autor ?></small></h3>
 			<p class="[  ]"><?php echo $lugar . '. ' . $ano ?></p>
 		</div>
 		<div class="[ xmall-12 medium-10 large-8 center ][ text-center ]">
-			<h3>Descripción</h3>
 			<?php the_content(); ?>
 		</div>
 
 	</div><!-- wrapper -->
 </section>
 
-<?php get_footer(); ?>
+<?php $prev_post = get_previous_post();
+$next_post = get_next_post();
+
+if ($prev_post) : ?>
+	<a href="<?php echo get_permalink( $prev_post->ID ); ?>"><img class="[ span ][ text-left ][ padding ][ cycle-control cycle-prev ]" src="<?php echo THEMEPATH; ?>images/prev.png"></a>
+<?php endif;
+
+if ($next_post) : ?>
+	<a href="<?php echo get_permalink( $next_post->ID ); ?>"><img class="[ span ][ text-left ][ padding ][ cycle-control cycle-next ]" src="<?php echo THEMEPATH; ?>images/next.png"></a>
+<?php endif;
+
+get_footer(); ?>

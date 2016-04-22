@@ -202,13 +202,14 @@
 				<header class="[ header header-not-home__desktop ][ shown--large ][ bg-light ][ drop-shadow ][ overflow-hidden ]">
 					<div class="[ wrapper ]">
 						<div class="[ row ]">
-							<div class="[ xmall-4 ][ inline-block align-middle ]">
+							<div class="[ column large-4 ]">
 								<div class="[ logo ]">
 									<a href="<?php echo site_url(); ?>">
 										<img alt="Onnis Luque" src="<?php echo THEMEPATH ?>images/logo-onnis-horizontal.svg" class="[ svg ][ icon icon--xlarge ][ color-intermediate ]">
 									</a>
 								</div>
-							</div><div class="[ xmall-8 ][ inline-block align-middle ]">
+							</div>
+							<div class="[ column large-8 ]">
 								<nav class="[ text-right ][ uppercase ]">
 									<a href="<?php echo site_url(); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo is_home() ? 'active' : ''; ?> ]">Inicio</a>
 									<a href="<?php echo site_url('archivo'); ?>" class="[ button button--ink__intermediate ][ inline-block align-middle ][ <?php echo get_post_type() == 'archivo' ? 'active' : ''; ?> ]">Foto</a>

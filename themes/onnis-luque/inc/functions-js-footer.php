@@ -34,12 +34,9 @@ function footer_scripts(){
 					e.preventDefault();
 					var imagenNumber = $(this).data('number');
 					toggleModalGallery(imagenNumber);
+					$('body').css({'overflow': 'hidden'});
 				});
 
-				$('.js-gallery-toggler').on('click', function(e){
-					e.preventDefault();
-					toggleModalGallery(0);
-				});
 
 				$( window ).resize(function() {
 					$('.js-gallery').collagePlus(
@@ -120,6 +117,36 @@ function footer_scripts(){
 
 			<?php endif; ?>
 
+
+			/*------------------------------------*\
+				#SINGLE ARCHIVO
+			\*------------------------------------*/
+			<?php if( is_singular('archivo') OR is_post_type_archive('editorial') ) : ?>
+
+				/**
+				 * On load
+				**/
+
+
+				/**
+				 * Triggered events
+				**/
+				$('.card, .js-editorial-cover, .gallery-item').on('click', function(e){
+					e.preventDefault();
+					console.log('click');
+					var imagenNumber = $(this).data('number');
+					toggleModalGallery(imagenNumber);
+				});
+
+				$('.js-gallery-toggler').on('click', function(e){
+					e.preventDefault();
+					toggleModalGallery(0);
+					$('body').attr('style', '');
+				});
+
+
+
+			<?php endif; ?>
 
 
 

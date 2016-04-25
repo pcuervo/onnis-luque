@@ -34,7 +34,7 @@ $imagen_home = $imagenes_home_array[mt_rand(0, count($imagenes_home_array) - 1)]
 	<div class="[ opacity-gradient--top-bottom ][ z-index-2 ]"></div>
 	<div class="[ text-center ][ center-bottom ][ z-index-2 ][ xmall-12 ]">
 		<div class="wrapper">
-			<a href="<?php echo site_url( 'archivo' ); ?>" class="[ button button--primary ][ inline-block ][ align-middle ]">Ver proyectos</a>
+			<a href="<?php echo site_url( 'archivo' ); ?>" class="[ button button--primary ][ inline-block ][ align-middle ]">Ver más</a>
 			<a href="<?php echo site_url( 'contacto' ); ?>" class="[ button button--primary ][ inline-block ][ align-middle ][ js-modal-opener ]" data-modal="contacto">Contáctame</a>
 		</div>
 	</div>

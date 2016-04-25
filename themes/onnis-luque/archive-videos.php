@@ -7,7 +7,6 @@ if( have_posts() ) : ?>
 	================================================== -->
 	<section class="[ proyectos ]">
 		<div class="[ wrapper ]">
-			<h2 class="[ text-thin ]">Videos</h2>
 			<div class="[ row ]">
 				<?php
 				while ( have_posts() ) : the_post();

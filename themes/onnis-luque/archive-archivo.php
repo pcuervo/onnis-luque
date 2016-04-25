@@ -6,11 +6,11 @@ $proyectos_c = isset($_GET['proyectos']) ? $_GET['proyectos'] : '';
 $lugar_c = isset($_GET['lugar']) ? $_GET['lugar'] : '';
 $ano_c = isset($_GET['ano']) ? $_GET['ano'] : ''; ?>
 
-<div id="filters_h" class="[ wrapper ][ text-center ]" data-paso="1">
+<div id="filters_h" class="[ wrapper ][ text-center ][ margin-bottom ]" data-paso="1">
 	<select class="[ column xmall-1 ][ filters-header hidden--medium form-selct ] [ shown--large ]">
 		<option class="option-filter" value="" data-variable="tipologia">Tipología</option>
 		<?php $tipologias = get_terms_proyectos( 'tipologia' ); ?>
-		<?php foreach ( $tipologias as $key => $tipologia ) : 
+		<?php foreach ( $tipologias as $key => $tipologia ) :
 			$select = $tipologi_c == $key ? 'selected' : ''; ?>
 			<option class="option-filter" value="<?php echo $key; ?>" data-variable="tipologia" <?php echo $select; ?> ><?php echo $tipologia; ?></option>
 		<?php endforeach; ?>
@@ -21,14 +21,6 @@ $ano_c = isset($_GET['ano']) ? $_GET['ano'] : ''; ?>
 		<?php foreach ( $arquitectos_despachos as $key => $arq_desp ) :
 			$select = $arquitectos == $key ? 'selected' : ''; ?>
 			<option value="<?php echo $key; ?>" data-variable="arquitecto-despacho" <?php echo $select; ?> ><?php echo $arq_desp; ?></option>
-		<?php endforeach; ?>
-	</select>
-	<select class="[ column xmall-1 ][ filters-header hidden--medium form-selct ] [ shown--large ]">
-		<option value="" data-variable="proyectos">Proyecto</option>
-		<?php $proyectos = get_proyectos(); ?>
-		<?php foreach ( $proyectos as $key => $proyecto ) :
-			$select = $proyectos_c == $key ? 'selected' : ''; ?>
-			<option value="<?php echo $key; ?>" data-variable="proyectos" <?php echo $select; ?> ><?php echo $proyecto; ?></option>
 		<?php endforeach; ?>
 	</select>
 	<select class="[ column xmall-1 ][ filters-header hidden--medium form-selct ] [ shown--large ]">
@@ -48,8 +40,8 @@ $ano_c = isset($_GET['ano']) ? $_GET['ano'] : ''; ?>
 		<?php endforeach; ?>
 	</select>
 
-	<a class="[ button button--primary button--rounded-bottom ][ no-margin ][ js-modal-opener hidden--large ] [ shown--medium ]" href="#" data-modal="filtros" >Filtrar proyectos</a>
-	
+	<a class="[ button button--primary button--rounded-bottom ][ no-margin ][ js-modal-opener ][ hidden--large ]" href="#" data-modal="filtros" >Filtrar proyectos</a>
+
 </div>
 
 <?php if( have_posts() ) : ?>
@@ -60,7 +52,6 @@ $ano_c = isset($_GET['ano']) ? $_GET['ano'] : ''; ?>
 	================================================== -->
 	<section class="[ proyectos ]">
 		<div class="[ wrapper ]">
-			<h2 class="[ text-thin ]">Proyectos</h2>
 			<div class="[ row ]">
 				<?php
 				if( empty( $_GET ) ){
@@ -142,19 +133,6 @@ $ano_c = isset($_GET['ano']) ? $_GET['ano'] : ''; ?>
 									<?php $tipologias = get_terms_proyectos( 'tipologia' ); ?>
 									<?php foreach ( $tipologias as $key => $tipologia ) : ?>
 										<option value="<?php echo $key; ?>"><?php echo $tipologia; ?></option>
-									<?php endforeach; ?>
-								</select>
-								<i class="arrow"></i>
-							</label>
-						</fieldset>
-						<fieldset class="[ column xmall-12 medium-6 ][ margin-bottom--large ]">
-							<label class="field select">
-								<span class="[ uppercase ]">Proyectos</span>
-								<select class="[ column xmall-12 ]" name="proyectos">
-									<option value="">Todos</option>
-									<?php $proyectos = get_proyectos(); ?>
-									<?php foreach ( $proyectos as $key => $proyecto ) : ?>
-										<option value="<?php echo $key; ?>"><?php echo $proyecto; ?></option>
 									<?php endforeach; ?>
 								</select>
 								<i class="arrow"></i>

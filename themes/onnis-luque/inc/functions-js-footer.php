@@ -75,6 +75,7 @@ function footer_scripts(){
 			$(window).resize(function(){
 				toggleHeader();
 				setContainerPaddingBottom();
+				setMainPaddingTop();
 			});
 
 			$('.js-modal-opener').on('click', function(e){

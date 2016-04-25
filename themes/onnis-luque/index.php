@@ -3,7 +3,34 @@
 <!-- =================================================
 ==== HERO
 ================================================== -->
-<section class="[ hero hero-home ]">
+
+<?php
+
+$imagenes_home= get_page_by_title( "Imágenes home" );
+
+// echo '<pre>';
+// 	print_r($imagenes_home);
+// echo '</pre>';
+
+global $sga_gallery_types,$post,$sga_options,$sga_gallery_params, $content;
+
+$post_id = $imagenes_home->ID;
+$gallid = $imagenes_home->ID;
+$howmany = preg_match_all('/\[gallery(\s+columns="[^"]*")?(\s+link="[^"]*")?\s+ids="([^"]*)"\]/',$imagenes_home->post_content,$arrmatches);
+$imagenes_home_array = array();
+
+$ids=$arrmatches[3][0]; // gallery images IDs are here now
+$images = sga_gallery_images('full',$ids);
+
+foreach ($images as $image) {
+	array_push($imagenes_home_array, $image[0]);
+}
+
+$imagen_home = $imagenes_home_array[mt_rand(0, count($imagenes_home_array) - 1)];
+
+?>
+
+<section class="[ hero ]" style="background-image: url(<?php echo $imagen_home; ?>)">
 	<div class="[ opacity-gradient--top-bottom ][ z-index-2 ]"></div>
 	<div class="[ text-center ][ center-bottom ][ z-index-2 ][ xmall-12 ]">
 		<div class="wrapper">
@@ -20,15 +47,19 @@
 $archivo_args = array(
 	'post_type' => 'archivo',
 	'posts_per_page' => 6,
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'mostrar-home',
+			'field'    => 'slug',
+			'terms'    => 'mostrar',
+		)
+	),
 );
 $archivo_query = new WP_Query( $archivo_args );
 if( $archivo_query->have_posts() ) : ?>
 	<section class="[ archivo ][ margin-top-bottom--large ]">
 		<div class="[ wrapper ]">
-
 			<div class="[ row ]">
-
-				<h2 class="[ uppercase ][ margin-bottom--small ][ text-thin ]">Proyectos <span class="[ text-bold ]" >Recientes</span></h2>
 				<?php
 				while ( $archivo_query->have_posts() ) : $archivo_query->the_post();
 					$lugar = get_lugar_proyecto( $post->ID );

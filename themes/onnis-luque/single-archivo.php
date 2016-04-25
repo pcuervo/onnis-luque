@@ -15,6 +15,9 @@
 	================================================== -->
 	<article class="[ hero hero-single-archivo ][ margin-bottom ]" style="background-image: url(<?php echo $hero_url; ?>)">
 		<div class="[ opacity-gradient--bottom-top ][ z-index-2 ]"></div>
+		<div class="[ text-center ][ center-top ][ z-index-2 ][ xmall-12 ]">
+			<button class="[ button button--primary ][ inline-block ][ align-middle ]" href="javascript:history.back(1)">atrás</button>
+		</div>
 		<div class="[ center-full ][ z-index-3 ][ xmall-12 ][ text-center color-light ]">
 			<div class="[ wrapper ]">
 				<h1 class="[  ][ no-margin ]"><?php echo get_the_title(); ?></h1>
@@ -83,13 +86,11 @@
 					$imageURL 	= $image[0];
 					?>
 
-					<div class="[ image-single ][ bg-light color-intermediate ]">
-						<p class="[ text-center ][ no-margin ][ cycle-info ]"><?php echo $key+1; ?>/<?php echo $totalImages; ?></p>
-						<img class="[ center block ]" src="<?php echo $imageURL; ?>">
-					</div>
+					<img class="[ image-single ]" src="<?php echo $imageURL; ?>">
 
 				<?php } ?>
 			</div><!-- slideshow -->
+			<p class="[ text-center ][ no-margin ][ cycle-info ][ color-secondary ][ center-bottom ]"></p>
 		</div>
 	</div><!-- modal-content -->
 </section>

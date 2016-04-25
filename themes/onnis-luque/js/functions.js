@@ -185,7 +185,7 @@ function getContactErrorHTML( message ){
 //Toggle Modal and run cycle
 function toggleModalGallery( imagenNumber ){
 	if ( $('.modal-archivo, .modal-editorial').hasClass('hide') ){
-		
+
 		$('.modal-archivo, .modal-editorial').removeClass('hide');
 		$('.slideshow').cycle({
 			slides 			: '.image-single',
@@ -197,7 +197,7 @@ function toggleModalGallery( imagenNumber ){
 			log 			: true,
 			startingSlide 	: imagenNumber,
 			next 			: '.cycle-next',
-			prev 			: '.cycle-prev',
+			prev 			: '.cycle-prev'
 		});
 	} else {
 		destroyCycle();
@@ -255,8 +255,8 @@ function sendContactEmail( form ){
 }// sendContactEmail
 
 if (document.getElementById("filters_h")) {
-	
-	
+
+
 	$( "#filters_h select" ).change(function() {
 	   	var str = site_url+"/archivo/?";
 	   	$( "#filters_h select option:selected" ).each(function() {
@@ -268,14 +268,14 @@ if (document.getElementById("filters_h")) {
 	   	 		str += '&';
 	   	 	};
 	   	 	count = 1 + count;
-	   	 	
-	   	 	
+
+
 	   	});
-	   	
+
 	   	window.location = str;
-	   	
+
 	});
-	
+
 }
 
 if (document.getElementById("single_video")) {

@@ -37,6 +37,11 @@ function footer_scripts(){
 					$('body').css({'overflow': 'hidden'});
 				});
 
+				$('.slideshow').on('cycle-update-view', function (e, optionHash, slideOptionsHash, currSlideEl) {
+					var caption = (optionHash.currSlide + 1) + ' / ' + optionHash.slideCount;
+					$('.cycle-info').html(caption);
+				});
+
 
 				$( window ).resize(function() {
 					$('.js-gallery').collagePlus(
@@ -134,7 +139,6 @@ function footer_scripts(){
 				**/
 				$('.card, .js-editorial-cover, .gallery-item').on('click', function(e){
 					e.preventDefault();
-					console.log('click');
 					var imagenNumber = $(this).data('number');
 					toggleModalGallery(imagenNumber);
 				});

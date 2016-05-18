@@ -15,20 +15,23 @@
 	================================================== -->
 	<article class="[ hero hero-single-archivo ][ margin-bottom ]" style="background-image: url(<?php echo $hero_url; ?>)">
 		<div class="[ opacity-gradient--bottom-top ][ z-index-2 ]"></div>
-		<div class="[ text-center ][ center-top ][ z-index-2 ][ xmall-12 ]">
-			<button class="[ button button--primary ][ inline-block ][ align-middle ]" href="javascript:history.back(1)">atrás</button>
-		</div>
-		<div class="[ center-full ][ z-index-3 ][ xmall-12 ][ text-center color-light ]">
-			<div class="[ wrapper ]">
-				<h1 class="[  ][ no-margin ]"><?php echo get_the_title(); ?></h1>
-				<h2 class="[  ]"><small><?php echo $autor ?></small></h2>
+		<div class="wrapper">
+			<div class="[ text-left ][ center-top ][ z-index-2 ][ xmall-12 ]">
+				<button class="[ button--light button--ink ][ no-padding ]" onclick="window.history.go(-1); return false;"">< atrás</button>
+			</div>
+			<div class="[ center-full ][ z-index-3 ][ xmall-12 ][ text-center color-light ]">
+				<div class="[ wrapper ]">
+					<h1 class="[  ][ no-margin ]"><?php echo get_the_title(); ?></h1>
+					<h2 class="[  ]"><small><?php echo $autor ?></small></h2>
+				</div>
+			</div>
+			<div class="[ center-bottom ][ z-index-3 ][ xmall-12 ][ text-center color-light ]">
+				<div class="[ wrapper ]">
+					<p class="[  ]"><small><?php echo $lugar . '. ' . $ano ?></small></p>
+				</div>
 			</div>
 		</div>
-		<div class="[ center-bottom ][ z-index-3 ][ xmall-12 ][ text-center color-light ]">
-			<div class="[ wrapper ]">
-				<p class="[  ]"><small><?php echo $lugar . '. ' . $ano ?></small></p>
-			</div>
-		</div>
+
 	</article><!-- hero -->
 
 	<div class="[ margin-bottom--large ][ single-content ]">

@@ -24,12 +24,13 @@
 								<a href="<?php echo get_permalink(); ?>" class="[ button button--primary ][ no-margin ][ pull-right ]">Mas información</a>
 							</div> -->
 						</div>
-
 					</div>
+
 				<?php endwhile; ?>
 			</div>
 		</div>
 	</section><!-- talleres -->
+
 <?php endif; wp_reset_query(); ?>
 
 <?php get_footer(); ?>

@@ -15,13 +15,13 @@ $postCounter = 0;
 				while ( have_posts() ) : the_post();
 				?>
 					<div class="[ column xmall-6 medium-4 large-3 ][ margin-bottom ]">
-						<a class="[ block ][ relative ][ box-hover-content ]" href="#" data-number="<?php echo $postCounter; ?>">
+						<div class="[ relative ][ box-hover-content ]">
 							<?php the_post_thumbnail('single_editorial', array('class' => '[ image-responsive ]')); ?>
 							<div class="[ absolute ][ text-center ][ color-dark ]">
 								<h3 class="[ uppercase ]"><?php echo get_the_title(); ?></h3>
 								<p><?php the_content(); ?></p>
 							</div>
-						</a>
+						</div>
 					</div>
 				<?php $postCounter++; endwhile; ?>
 			</div>

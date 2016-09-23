@@ -8,10 +8,6 @@
 
 $imagenes_home= get_page_by_title( "Imágenes home" );
 
-// echo '<pre>';
-// 	print_r($imagenes_home);
-// echo '</pre>';
-
 global $sga_gallery_types,$post,$sga_options,$sga_gallery_params, $content;
 
 $post_id = $imagenes_home->ID;

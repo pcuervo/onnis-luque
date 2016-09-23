@@ -32,10 +32,14 @@
 
 }
 
-.single-videos .cycle-control{
-        @media (min-width: @large){
-        bottom: 50%;
+@media (min-width: @large){
+
+    .single-videos .cycle-control{
+        position: absolute; top: 50%; bottom: 0;
     }
+
+    .single-videos .cycle-prev{ left: 0; }
+    .single-videos .cycle-next{ right: 0; }
 
 }
 

@@ -21,7 +21,7 @@ if( have_posts() ) : ?>
 							<img class="[ card__image ][ center-full ]" src="<?php echo $image[0] ?>" alt="">
 							<div class="[ card__info ][ xmall-12 ][ z-index-1 ]">
 								<h3 class="[ no-margin ]"><?php the_title(); ?></h3>
-								<p><?php echo $lugar . '. ' . $ano; ?></p>
+								<p><?php echo $lugar . ' ' . $ano; ?></p>
 							</div>
 						</article>
 					</a>

@@ -127,31 +127,7 @@ function footer_scripts(){
 			/*------------------------------------*\
 				#SINGLE ARCHIVO
 			\*------------------------------------*/
-			<?php if( is_singular('archivo') OR is_post_type_archive('editorial') ) : ?>
 
-				/**
-				 * On load
-				**/
-
-
-				/**
-				 * Triggered events
-				**/
-				$('.card, .js-editorial-cover, .gallery-item').on('click', function(e){
-					e.preventDefault();
-					var imagenNumber = $(this).data('number');
-					toggleModalGallery(imagenNumber);
-				});
-
-				$('.js-gallery-toggler').on('click', function(e){
-					e.preventDefault();
-					toggleModalGallery(0);
-					$('body').attr('style', '');
-				});
-
-
-
-			<?php endif; ?>
 
 
 

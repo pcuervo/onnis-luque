@@ -106,7 +106,6 @@
 	.transition(all 0.1s ease);
 }
 
-
 /**
  * Shadows
 **/
@@ -267,6 +266,14 @@
 	width: 100%; max-width: 100%; height: auto;
 }
 
+.image-banner-taller{
+	height: 200px;
+	.transition;
+	&:hover{
+		opacity: .5;
+	}
+}
+
 /**
  * Responsive background images for logos
 **/
@@ -283,8 +290,6 @@
 	height: 0;
 	text-indent: -9999px;
 }
-
-
 
 /*------------------------------------*\
 	#TEXT
@@ -304,8 +309,6 @@
 .lowercase{ text-transform: lowercase; }
 
 .decoration-none{ text-decoration: none; }
-
-
 
 
 /*------------------------------------*\
@@ -370,3 +373,23 @@
 .z-index-8{ z-index: @zIndex-8; }
 .z-index-9{ z-index: @zIndex-9; }
 .z-index-10{ z-index:@zIndex-10; }
+
+/*------------------------------------*\
+	#Content box
+\*------------------------------------*/
+
+.box-hover-content{
+	position: relative;
+	overflow: hidden;
+	img{.transition;}
+	div{ 
+		width: 100%;
+		top:-100%;
+		padding: 0 5px;
+		.transition; 
+	}
+	&:hover{
+		img{ opacity: .1}
+		div{ top: 35%;}
+	}
+}

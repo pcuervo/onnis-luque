@@ -15,7 +15,7 @@
 		<div class="[ text-center ][ margin-bottom--large ]">
 			<h2 class="[  ][ no-margin ]"><?php the_title(); ?></h2>
 			<h3 class="[ no-margin ]"><small><?php echo $autor ?></small></h3>
-			<p class="[  ]"><?php echo $lugar . '. ' . $ano ?></p>
+			<p class="[  ]"><?php echo $lugar . ' ' . $ano ?></p>
 		</div>
 		<div class="[ xmall-12 medium-10 large-8 center ][ text-center ]">
 			<?php the_content(); ?>

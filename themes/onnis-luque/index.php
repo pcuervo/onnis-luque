@@ -46,7 +46,7 @@ $imagen_home = $imagenes_home_array[mt_rand(0, count($imagenes_home_array) - 1)]
 <?php
 $archivo_args = array(
 	'post_type' => 'archivo',
-	'posts_per_page' => 6,
+	'posts_per_page' => 12,
 	'tax_query' => array(
 		array(
 			'taxonomy' => 'mostrar-home',

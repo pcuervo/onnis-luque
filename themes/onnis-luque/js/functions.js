@@ -197,11 +197,13 @@ function toggleModalGallery( imagenNumber ){
 			log 			: true,
 			startingSlide 	: imagenNumber,
 			next 			: '.cycle-next',
-			prev 			: '.cycle-prev'
+			prev 			: '.cycle-prev',
+			autoHeight 		: 'calc'
 		});
 	} else {
 		destroyCycle();
 		$('.modal-archivo, .modal-editorial').addClass('hide');
+		$('body').css('overflow', 'visible');
 	}
 
 	// $('.modal-archivo, .modal-editorial').toggleClass('hide');

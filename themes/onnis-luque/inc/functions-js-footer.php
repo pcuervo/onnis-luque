@@ -37,6 +37,11 @@ function footer_scripts(){
 					$('body').css({'overflow': 'hidden'});
 				});
 
+				$('.js-gallery-toggler').on('click', function(e){
+					e.preventDefault();
+					toggleModalGallery(0);
+				});
+
 				$('.slideshow').on('cycle-update-view', function (e, optionHash, slideOptionsHash, currSlideEl) {
 					var caption = (optionHash.currSlide + 1) + ' / ' + optionHash.slideCount;
 					$('.cycle-info').html(caption);
@@ -94,6 +99,7 @@ function footer_scripts(){
 				e.preventDefault();
 				closeModal();
 			});
+
 
 			$('.js-menu-toggler').on('click', function(e){
 				e.preventDefault();

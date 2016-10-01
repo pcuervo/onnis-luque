@@ -7,17 +7,14 @@
 ?>
 
 <section class="[ single ]">
-
-	<article class="[ ][ margin-bottom ]">
-		<div class="[ wrapper ][ text-center ]">
-			<h1 class="[ no-margin ]"><?php echo get_the_title(); ?></h1>
-			<h4 class="[ margin-bottom--large ]"><?php echo $lugar_taller . ' - ' . $fecha_taller ?></h4>
-			<img class="[ margin-bottom ]" src="<?php echo $image[0]; ?>" alt="Cartel taller">
-			<div class="[ xmall-12 medium-10 large-8 center ][ text-center ]">
-				<?php the_content(); ?>
-			</div>
+	<div class="[ wrapper ][ text-center ]">
+		<h1 class="[ no-margin ]"><?php echo get_the_title(); ?></h1>
+		<h4 class="[ margin-bottom--large ]"><?php echo $lugar_taller . ' - ' . $fecha_taller ?></h4>
+		<img class="[ margin-bottom ]" src="<?php echo $image[0]; ?>" alt="Cartel taller">
+		<div class="[ xmall-12 medium-10 large-8 center ][ text-center ]">
+			<?php the_content(); ?>
 		</div>
-	</article><!-- hero -->
+	</div>
 </section>
 
 <?php get_footer(); ?>

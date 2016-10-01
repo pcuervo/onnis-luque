@@ -65,7 +65,7 @@
 .opacity-7{ .opacity(70, 0.7); }
 .opacity-8{ .opacity(80, 0.8); }
 .opacity-9{ .opacity(90, 0.9); }
-.opacity-10{ .opacity(100, 1); }
+.opacity-10{ .opacity(100, 1) !important; filter: alpha(opacity=1) !important; }
 
 /**
  * Displays
@@ -379,14 +379,15 @@
 \*------------------------------------*/
 
 .box-hover-content{
+	width: 100% !important;
 	position: relative;
 	overflow: hidden;
 	img{.transition;}
-	div{ 
+	div{
 		width: 100%;
 		top:-100%;
 		padding: 0 5px;
-		.transition; 
+		.transition;
 	}
 	&:hover{
 		img{ opacity: .1}

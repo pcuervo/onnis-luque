@@ -15,7 +15,7 @@
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 				?>
 				<div class="[ column xmall-12 medium-6 ][ margin-bottom--large ]">
-					<a class="[ js-modal-opener ]" href="#" data-modal="taller" >
+					<a class="[ js-modal-opener ]" href="#" data-modal="taller-<?php echo $post->ID; ?>" >
 						<div class="[ image-responsive ][ margin-bottom ][ bg-cover ][ image-banner-taller ]" style="background-image: url('<?php echo $image[0]; ?>');"></div>
 					</a>
 					<h3 class="[ margin-bottom ][ uppercase ]"><?php echo get_the_title(); ?></h3>
@@ -27,24 +27,24 @@
 					</div>
 				</div>
 
-				<div class="[ modal-wrapper modal-taller ][ hide ]">
-					<div class="[ modal ][ diagonal-green-to-blue-gradient ]">
-						<div class="[ modal-content ][ wrapper ]">
-							<div class="[ row ][ clearfix ][ padding--top ]">
-								<div class="[ pull-right ][ hidden--large-inline ][ inline-block align-middle ]">
-									<a class="[ block ][ pull-right ][ bg-transparent ][ js-modal-closer ]" data-modal="taller" href="#">
-										<span class="[ block ][ no-padding ]">
-											<img class="[ svg icon icon--medium ][ color-intermediate ][ padding--small ]" src="<?php echo THEMEPATH; ?>images/close.svg" alt="menu">
-										</span>
+				<section class="[ modal-wrapper modal-taller modal-taller-<?php echo $post->ID; ?> ][ hide ]">
+					<div class="[ modal modal--full ]">
+						<div class="[ xmall-12 ][ close-modal ][ clearfix ][ absolute z-index-6 ][ color-intermediate ]">
+							<div class="[ row controls ]">
+								<p class="[ span xmall-12 ][ text-center ][ no-margin ]">
+									<a class="[ block ][ padding ][ bg-transparent ][ js-modal-toggler ]" data-modal="contacto" href="#">
+										Cerrar
 									</a>
-								</div>
-							</div><!-- row -->
-							<div class="[ row ]">
-								<img class="image-responsive" src="<?php echo $image[0]; ?>" alt="">
+								</p>
 							</div>
-						</div><!-- modal-content -->
+						</div>
+						<div class="[ modal-content ][ wrapper ][ text-center ]">
+							<div class="[ slideshow ]">
+								<img class="[ image-single ][ center-full ][ opacity-10 ]" src="<?php echo $image[0]; ?>" alt="">
+							</div>
+						</div>
 					</div>
-				</div>
+				</section>
 				<?php endwhile; ?>
 			</div>
 		</div>

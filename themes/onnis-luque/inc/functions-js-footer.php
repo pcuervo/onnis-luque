@@ -12,9 +12,21 @@ function footer_scripts(){
 		<script type="text/javascript">
 
 			/*------------------------------------*\
+				#TALLERES / EDITORIAL
+			\*------------------------------------*/
+			<?php if( is_post_type_archive('talleres') OR is_post_type_archive('editorial')  ) : ?>
+
+				$('.js-modal-toggler').on('click', function(e){
+					e.preventDefault();
+					toggleModal( $(this).closest('.modal-taller') );
+				});
+
+			<?php endif; ?>
+
+			/*------------------------------------*\
 				#SINGLE ARCHIVO
 			\*------------------------------------*/
-			<?php if( is_singular('archivo') OR is_post_type_archive('editorial') ) : ?>
+			<?php if( is_singular('archivo') OR is_post_type_archive('editorial')) : ?>
 
 				/**
 				 * On load

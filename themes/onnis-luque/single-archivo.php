@@ -77,7 +77,6 @@
 				</p>
 				<img class="[ span ][ padding ][ cycle-control cycle-next ]" src="<?php echo THEMEPATH; ?>images/next.png">
 			</div>
-
 		</div>
 		<div class="[ modal-content ][ wrapper ][ text-center ]">
 			<div class="[ slideshow ]">

@@ -206,7 +206,19 @@ function toggleModalGallery( imagenNumber ){
 		$('body').css('overflow', 'visible');
 	}
 
-	// $('.modal-archivo, .modal-editorial').toggleClass('hide');
+}
+
+//Toggle Modal
+function toggleModal(modal){
+
+	console.log(modal);
+
+	if ( modal.hasClass('hide') ){
+		modal.removeClass('hide');
+	} else {
+		modal.addClass('hide');
+		$('body').css('overflow', 'visible');
+	}
 }
 
 function destroyCycle(){

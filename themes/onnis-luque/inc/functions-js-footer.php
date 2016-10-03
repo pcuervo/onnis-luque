@@ -24,9 +24,9 @@ function footer_scripts(){
 			<?php endif; ?>
 
 			/*------------------------------------*\
-				#SINGLE ARCHIVO
+				#SINGLE ARCHIVO / EDITORIAL
 			\*------------------------------------*/
-			<?php if( is_singular('archivo') OR is_post_type_archive('editorial')) : ?>
+			<?php if( is_singular('archivo') OR is_singular('editorial')) : ?>
 
 				/**
 				 * On load

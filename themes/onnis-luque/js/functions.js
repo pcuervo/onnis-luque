@@ -135,7 +135,7 @@ function setMainPaddingTop(){
 	var headerHeight = getHeaderHeight();
 	var sy = getScrollY();
 	$('.main').not('.main.home').css('padding-top', headerHeight + 20);
-	$('.main.post-type-archive-archivo, .main.single-archivo, .main.single-videos').css('padding-top', headerHeight);
+	$('.main.post-type-archive-archivo, .main.single-archivo, .main.single-videos, .main.single-editorial').css('padding-top', headerHeight);
 }// setMainPaddingTop
 
 /**
